@@ -35,7 +35,7 @@ function Nav() {
     return () => window.removeEventListener("scroll", on)
   }, [])
   return (
-    <header className={cn("fixed inset-x-0 top-9 z-40 px-5 transition-colors duration-700 sm:px-8", light ? "text-[#1d1a16]" : "text-[#f4ede2]")}>
+    <header className={cn("fixed inset-x-0 top-4 z-40 px-5 transition-colors duration-700 sm:px-8", light ? "text-[#1d1a16]" : "text-[#f4ede2]")}>
       <div className="mx-auto flex max-w-[90rem] items-center justify-between gap-4">
         <a href="#legend" className="flex items-baseline gap-2.5">
           <span className="font-serif text-xl tracking-wide">Bhujangyy</span>
@@ -71,51 +71,55 @@ function Nav() {
 
 function Legend() {
   return (
-    <Scene id="legend" name="hero" frames={96} height={460} className="bg-[radial-gradient(70%_80%_at_62%_45%,#b3132f_0%,#6d0718_48%,#1c0207_100%)] text-[#f7efe4]" focus={(p) => 0.64 - 0.14 * ramp(p, 0.3, 0.72)}>
-      {(p, at) => {
-        const k = at("khanda")
+    <Scene
+      id="legend"
+      name="hero"
+      frames={96}
+      height={460}
+      className="bg-[radial-gradient(60%_75%_at_50%_45%,#b3132f_0%,#6d0718_48%,#1c0207_100%)] text-[#f7efe4]"
+      focus={() => 0.5}
+      behind={(p) => {
+        const t3 = ramp(p, 0.8, 0.96)
+        return (
+          // the name rises behind him, so he stands in front of it
+          <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-[14%] text-center select-none sm:top-[11%]" style={{ opacity: t3, transform: `translateY(${(1 - t3) * 60}px)` }}>
+            <span className="block font-serif text-[clamp(3.4rem,15vw,15rem)] leading-none tracking-[0.01em] text-[#f7efe4]/95 [text-shadow:0_10px_80px_rgba(40,0,8,.5)]">BHUJANGYY</span>
+          </div>
+        )
+      }}
+    >
+      {(p) => {
         const t1 = band(p, 0, 0.02, 0.26, 0.34)
-        const t2 = band(p, 0.4, 0.48, 0.64, 0.7)
-        const t3 = ramp(p, 0.82, 0.95)
+        const t2 = band(p, 0.42, 0.5, 0.68, 0.76)
+        const t3 = ramp(p, 0.84, 0.97)
         return (
           <>
-            {/* the dark lifts as the light finds him */}
-            <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-black" style={{ opacity: 0.55 * (1 - ramp(p, 0, 0.3)) }} />
+            {/* dim at first: the light finds him as you scroll */}
+            <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-black" style={{ opacity: 0.5 * (1 - ramp(p, 0, 0.36)) }} />
             <div className="absolute inset-0 mx-auto flex max-w-[90rem] items-end px-5 pb-[12vh] sm:px-8 md:items-center md:pb-0" style={{ opacity: t1 }}>
-              <div className="max-w-md" style={{ transform: `translateY(${(1 - t1) * 20}px)` }}>
-                <h1 className="font-serif text-[clamp(3.2rem,8vw,7.5rem)] leading-[0.95] [text-shadow:0_2px_40px_rgba(0,0,0,.35)]">
+              <div className="max-w-md max-md:rounded-2xl max-md:bg-[#1c0207]/55 max-md:p-4 max-md:backdrop-blur-md" style={{ transform: `translateY(${(1 - t1) * 20}px)` }}>
+                <h1 className="font-serif text-[clamp(3.2rem,7vw,7rem)] leading-[0.95] [text-shadow:0_2px_40px_rgba(0,0,0,.35)]">
                   A legend
                   <br />
                   <em>in blue.</em>
                 </h1>
                 <p className="mt-6 max-w-xs text-sm leading-relaxed opacity-85">
-                  Bhujangyy is a young Nihang Singh — the face of an own brand for cinematic Sikh storytelling. Katha, history and the Dasam Granth, told frame by frame.
+                  Bhujangyy is a young Nihang Singh — the face of cinematic Sikh storytelling. Katha, history and the Dasam Granth, told frame by frame.
                 </p>
               </div>
             </div>
-            <p className="absolute right-5 bottom-[5vh] text-xs opacity-80 sm:right-8" style={{ opacity: t1 * 0.85 }}>
+            <p className="absolute right-5 bottom-[5vh] text-xs sm:right-8" style={{ opacity: t1 * 0.85 }}>
               <span style={gurmukhi}>ਹਨੇਰੇ ਤੋਂ</span> · Out of the dark
             </p>
-            <div className="absolute right-5 bottom-[9vh] max-w-[15rem] text-right [text-shadow:0_2px_24px_rgba(40,0,8,.7)] sm:right-[8vw] md:top-[40%] md:bottom-auto" style={{ opacity: t2, transform: `translateY(${(1 - t2) * 16}px)` }}>
+            <div className="absolute right-5 bottom-[9vh] max-w-[20rem] text-right [text-shadow:0_2px_24px_rgba(40,0,8,.7)] sm:right-[8vw] md:top-[42%] md:bottom-auto" style={{ opacity: t2, transform: `translateY(${(1 - t2) * 16}px)` }}>
               <p className="font-serif text-[clamp(2rem,4vw,3.4rem)] leading-none">
-                Calm eyes.
+                He looks up.
                 <br />
-                <em>Steel will.</em>
+                <em>Steel in hand.</em>
               </p>
               <p className="mt-4 text-xs leading-relaxed opacity-80">Barely grown, already Akal&apos;s soldier — every reel begins with him.</p>
             </div>
-            {/* the name, split by the khanda that crowns his dumalla */}
-            <div className="pointer-events-none absolute inset-x-0 -translate-y-1/2 [text-shadow:0_4px_40px_rgba(40,0,8,.6)]" style={{ opacity: t3, top: `${Math.min(62, Math.max(30, (k?.y ?? 45) + 2))}%` }}>
-              <div className="relative h-[1em] font-serif text-[clamp(4rem,15vw,15rem)] leading-none">
-                <span className="absolute top-0 right-[calc(100%-var(--k))] pr-[0.16em]" style={{ ["--k" as string]: `${k?.x ?? 50}%`, transform: `translateX(${(1 - t3) * 40}px)` }}>
-                  Bhuj
-                </span>
-                <span className="absolute top-0 left-[var(--k)] pl-[0.16em] italic" style={{ ["--k" as string]: `${k?.x ?? 50}%`, transform: `translateX(${(1 - t3) * -40}px)` }}>
-                  angyy
-                </span>
-              </div>
-            </div>
-            <div className="absolute inset-x-0 bottom-[8vh] text-center [text-shadow:0_2px_20px_rgba(40,0,8,.8)]" style={{ opacity: t3 }}>
+            <div className="absolute inset-x-0 bottom-[6vh] text-center [text-shadow:0_2px_20px_rgba(40,0,8,.8)]" style={{ opacity: t3 }}>
               <p className="text-2xl" style={gurmukhi}>
                 ਭੁਜੰਗੀ
               </p>
@@ -143,7 +147,6 @@ function Bana() {
         const c = band(p, 0.06, 0.12, 0.92, 1)
         return (
           <div className="text-[#1d1a16]">
-              <Callout at={at("khanda")} label="Khanda" note="Crowns the dumalla — the emblem of the Khalsa" show={c} />
               <Callout at={at("chakkar")} label="Chakkar" note="Steel rings, armour and a weapon in one" show={c} />
               <Callout at={at("farla")} label="Farla" note="The flowing banner of the Akali" show={c} side="left" />
               <Callout at={at("dumalla")} label="Dumalla" note="Tall, layered, tied by hand each morning" show={c * ramp(p, 0.4, 0.5)} />
@@ -166,7 +169,7 @@ function Bana() {
                     <em>a Nihang.</em>
                   </h2>
                   <p className="mt-5 max-w-xs text-sm leading-relaxed text-[#1d1a16]/65">
-                    Royal blue, wound by hand and crowned in steel. Nothing on the dumalla is decoration — every piece is a vow.
+                    Royal blue, wound by hand and ringed in steel. Nothing on the dumalla is decoration — every piece is a vow.
                   </p>
                 </div>
                 <div style={{ opacity: mid }} className="absolute bottom-0 left-0 w-max md:top-1/2 md:bottom-auto md:-translate-y-1/2 max-md:rounded-2xl max-md:bg-[#efe9df]/85 max-md:p-4 max-md:backdrop-blur-md">
@@ -209,7 +212,7 @@ function Shastar() {
         return (
             <div className="text-[#f4ede2]">
               <Callout at={at("kirpan")} label="Kirpan" note="Carried at the waist, always" show={c} />
-              <Callout at={at("bata")} label="Sarbloh bata" note="The iron bowl of Amrit and langar" show={c} side="left" />
+              <Callout at={at("jamdhar")} label="Jamdhar" note="The broad, curved blade in his hand" show={c} side="left" />
               <Callout at={at("kara")} label="Kara" note="Iron at the wrist, a circle with no end" show={c} />
               <Callout at={at("gatra")} label="Gatra" note="The strap that holds the kirpan" show={c * ramp(p, 0.3, 0.4)} side="left" />
               <Callout at={at("dhal")} label="Dhal" note="The shield, worn on the back" show={c} />

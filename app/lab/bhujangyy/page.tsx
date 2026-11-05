@@ -4,15 +4,16 @@ import "@fontsource/noto-serif-gurmukhi/700.css"
 import "@fontsource/cormorant-garamond/500.css"
 import "@fontsource/cormorant-garamond/500-italic.css"
 import { ArrowUpRight } from "lucide-react"
-import { LabBar, LabFooterNote } from "@/components/lab/lab-bar"
 import { MahatamDays, type Day } from "@/components/lab/mahatam-days"
 import { Reveal } from "@/components/site/reveal"
 import { BhujangyyFilm, FollowLinks } from "@/components/lab/bhujangyy-film"
-import { asset } from "@/lib/data"
+import { asset } from "@/components/lab/bhujangyy-asset"
 
 export const metadata: Metadata = {
-  title: "Bhujangyy — concept website",
-  description: "Bhujangyy: a young Nihang Singh and the face of cinematic Sikh storytelling. A scroll-driven concept site.",
+  title: { absolute: "Bhujangyy — Cinematic Sikh storytelling" },
+  description: "Bhujangyy: a young Nihang Singh and the face of cinematic Sikh storytelling. Katha, history and the Dasam Granth, told frame by frame.",
+  authors: [],
+  robots: { index: true, follow: false },
 }
 
 const gurmukhi = { fontFamily: '"Noto Serif Gurmukhi", serif' }
@@ -40,7 +41,6 @@ const days: Day[] = [
 export default function BhujangyyConcept() {
   return (
     <div className="min-h-screen bg-[#070b1c] text-[#f4ede2] [--font-serif:'Cormorant_Garamond',serif] [&_.font-serif]:[font-family:'Cormorant_Garamond',ui-serif,serif] [&_.font-serif]:font-medium">
-      <LabBar className="fixed inset-x-0 top-0 bg-black/40 text-white/75 backdrop-blur-md" />
       <BhujangyyFilm />
 
       {/* ---------- the saga ---------- */}
@@ -133,7 +133,7 @@ export default function BhujangyyConcept() {
           </div>
           <div className="mx-auto flex max-w-[90rem] flex-wrap items-center justify-between gap-4 border-t border-[#f4ede2]/10 px-5 py-8 sm:px-8">
             <span className="font-serif text-xl">Bhujangyy</span>
-            <LabFooterNote />
+            <p className="text-xs text-[#f4ede2]/40">© {new Date().getFullYear()} Bhujangyy</p>
           </div>
         </div>
       </section>

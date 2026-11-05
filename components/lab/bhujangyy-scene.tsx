@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { asset } from "@/lib/data"
+import { asset } from "@/components/lab/bhujangyy-asset"
 import { cn } from "@/lib/utils"
 
 /** where each named feature sits in every frame: [x 0..1, y 0..1 from top, visible 0|1] */
@@ -23,6 +23,7 @@ export function Scene({
   focus = () => 0.5,
   children,
   overlay,
+  behind,
   stageClass,
   id,
 }: {
@@ -36,6 +37,8 @@ export function Scene({
   children?: (p: number, at: Proj) => React.ReactNode
   /** drawn on top of the film, moving with it (callouts) */
   overlay?: (p: number, at: Proj) => React.ReactNode
+  /** drawn under the film, so the character stands in front of it (a title) */
+  behind?: (p: number) => React.ReactNode
   /** classes for the film's own box, e.g. to nudge the character off-centre on wide screens */
   stageClass?: string
   id?: string
@@ -181,6 +184,7 @@ export function Scene({
   return (
     <section ref={box} id={id} className={cn("relative", className)} style={{ height: `${height}svh` }}>
       <div className="sticky top-0 h-svh overflow-hidden">
+        {behind?.(p)}
         <div className={cn("absolute inset-0", stageClass)}>
           <canvas ref={cvs} aria-hidden="true" className="absolute inset-0 size-full" />
           {overlay?.(p, at)}
