@@ -13,7 +13,7 @@ export function MahatamDays({ days }: { days: Day[] }) {
   return (
     <div className="grid items-center gap-10 md:grid-cols-[minmax(0,320px)_1fr] md:gap-14">
       <div className="relative mx-auto w-full max-w-[320px]">
-        <div aria-hidden="true" className="absolute -inset-6 rounded-[2.5rem] bg-[radial-gradient(circle,#3f63ff40,transparent_70%)] blur-2xl" />
+        <div aria-hidden="true" className="absolute -inset-6 rounded-[2.5rem] bg-[radial-gradient(circle,#e8c27a33,transparent_70%)] blur-2xl" />
         {days.map((x, k) => (
           // eslint-disable-next-line @next/next/no-img-element
           <img
@@ -38,7 +38,7 @@ export function MahatamDays({ days }: { days: Day[] }) {
               onClick={() => setI(k)}
               className={cn(
                 "rounded-full border px-4 py-2 font-mono text-xs transition",
-                k === i ? "border-[#cfd6e4] bg-[#cfd6e4] text-[#050a1a]" : "border-white/15 text-white/60 hover:border-white/40 hover:text-white",
+                k === i ? "border-[#e8c27a] bg-[#e8c27a] text-[#0b1330]" : "border-white/15 text-white/60 hover:border-white/40 hover:text-white",
               )}
             >
               {x.day}
@@ -46,7 +46,7 @@ export function MahatamDays({ days }: { days: Day[] }) {
           ))}
         </div>
         <div key={d.day} className="page-in mt-10">
-          <p className="font-mono text-xs tracking-[0.3em] text-[#8fb3ff] uppercase">Dussehra Mahatam · {d.day}</p>
+          <p className="font-mono text-xs tracking-[0.3em] text-[#e8c27a] uppercase">Dussehra Mahatam · {d.day}</p>
           <h3 className="mt-4 text-4xl leading-tight font-semibold tracking-tight sm:text-5xl">{d.title}</h3>
           <a href={d.href} target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm transition hover:border-white/60">
             Watch the reel <ArrowUpRight className="size-4" />

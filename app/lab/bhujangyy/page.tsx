@@ -1,15 +1,18 @@
 import type { Metadata } from "next"
 import "@fontsource/noto-serif-gurmukhi/400.css"
 import "@fontsource/noto-serif-gurmukhi/700.css"
+import "@fontsource/cormorant-garamond/500.css"
+import "@fontsource/cormorant-garamond/500-italic.css"
 import { ArrowUpRight } from "lucide-react"
 import { LabBar, LabFooterNote } from "@/components/lab/lab-bar"
 import { MahatamDays, type Day } from "@/components/lab/mahatam-days"
 import { Reveal } from "@/components/site/reveal"
+import { BhujangyyFilm, FollowLinks } from "@/components/lab/bhujangyy-film"
 import { asset } from "@/lib/data"
 
 export const metadata: Metadata = {
   title: "Bhujangyy — concept website",
-  description: "A concept website for Bhujangyy: cinematic Sikh storytelling.",
+  description: "Bhujangyy: a young Nihang Singh and the face of cinematic Sikh storytelling. A scroll-driven concept site.",
 }
 
 const gurmukhi = { fontFamily: '"Noto Serif Gurmukhi", serif' }
@@ -34,133 +37,106 @@ const days: Day[] = [
   { day: "Day 10", title: "Bhog: the essence of ten days of vichaar.", code: "DesAiuEzkA_" },
 ].map((d) => ({ day: d.day, title: d.title, cover: cover(d.code), href: reel(d.code) }))
 
-/** two silver rings, like the chakkars on a dumalla */
-function Chakkar({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 200 200" aria-hidden="true" className={className}>
-      <circle cx="100" cy="100" r="92" fill="none" stroke="currentColor" strokeWidth="1.2" />
-      <circle cx="100" cy="100" r="74" fill="none" stroke="currentColor" strokeWidth="0.8" strokeDasharray="2 6" />
-      <circle cx="100" cy="100" r="56" fill="none" stroke="currentColor" strokeWidth="1.2" />
-    </svg>
-  )
-}
-
 export default function BhujangyyConcept() {
   return (
-    <div className="min-h-screen bg-[#050a1a] text-white">
-      <LabBar />
+    <div className="min-h-screen bg-[#070b1c] text-[#f4ede2] [--font-serif:'Cormorant_Garamond',serif] [&_.font-serif]:[font-family:'Cormorant_Garamond',ui-serif,serif] [&_.font-serif]:font-medium">
+      <LabBar className="fixed inset-x-0 top-0 bg-black/40 text-white/75 backdrop-blur-md" />
+      <BhujangyyFilm />
 
-      {/* ---------- hero ---------- */}
-      <header className="relative overflow-hidden">
-        <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(90%_70%_at_70%_20%,#1f3bb366,transparent_60%),radial-gradient(60%_50%_at_10%_90%,#0e1a4a,transparent_70%)]" />
-        <Chakkar className="absolute -top-24 -right-24 size-[34rem] animate-[spin_90s_linear_infinite] text-[#cfd6e4]/15" />
-        <Chakkar className="absolute -bottom-40 -left-32 size-[26rem] animate-[spin_120s_linear_infinite_reverse] text-[#cfd6e4]/10" />
-
-        <nav className="relative mx-auto flex max-w-6xl items-center justify-between px-5 py-6 sm:px-8">
-          <span className="text-xl font-semibold tracking-[0.3em] uppercase">Bhujangyy</span>
-          <div className="flex items-center gap-6 text-sm text-white/65">
-            <a href="#series" className="hidden transition hover:text-white sm:inline">Series</a>
-            <a href="#mahatam" className="hidden transition hover:text-white sm:inline">Dussehra Mahatam</a>
-            <a href={insta} target="_blank" rel="noreferrer" className="rounded-full bg-[#cfd6e4] px-4 py-2 font-medium text-[#050a1a] transition hover:bg-white">
-              Follow
-            </a>
-          </div>
-        </nav>
-
-        <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-5 pt-12 pb-24 sm:px-8 md:grid-cols-[1.2fr_1fr] md:pt-20 md:pb-32">
-          <div>
-            <p className="page-in font-mono text-xs tracking-[0.35em] text-[#8fb3ff] uppercase">Cinematic Sikh storytelling</p>
-            <h1 className="page-in mt-6 text-6xl leading-[1.15] font-bold sm:text-8xl [animation-delay:.15s]" style={gurmukhi}>
-              ਖੜਗ ਸਿੰਘ
-              <br />
-              <span className="bg-gradient-to-r from-[#cfd6e4] via-white to-[#8fb3ff] bg-clip-text text-transparent">ਯੁੱਧ</span>
-            </h1>
-            <p className="page-in mt-6 max-w-md text-lg leading-relaxed text-white/70 [animation-delay:.3s]">
-              The war of Kharag Singh from the Dasam Granth, told scene by scene in cinematic reels — with Giani Sher Singh Ji&apos;s katha as the voice.
-            </p>
-            <div className="page-in mt-9 flex flex-wrap gap-3 [animation-delay:.45s]">
-              <a href="#series" className="rounded-full bg-[#cfd6e4] px-7 py-3.5 text-sm font-medium text-[#050a1a] transition hover:bg-white">
-                Watch the series
-              </a>
-              <a href={insta} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-3.5 text-sm transition hover:border-white/60">
-                @bhujangyy <ArrowUpRight className="size-4" />
-              </a>
+      {/* ---------- the saga ---------- */}
+      <section id="saga" className="relative bg-[linear-gradient(180deg,#05070f_0%,#0d1b48_40%,#0d1b48_100%)]">
+        <div className="mx-auto max-w-[90rem] px-5 pt-32 pb-24 sm:px-8">
+          <Reveal className="grid gap-10 md:grid-cols-[1.3fr_1fr] md:items-end">
+            <div>
+              <p className="font-mono text-[10px] tracking-[0.25em] text-[#e8c27a] uppercase">04 / The saga</p>
+              <h2 className="mt-4 font-serif text-[clamp(3rem,7vw,6.5rem)] leading-[0.92]">
+                Step into
+                <br />
+                <em>Kharag Singh Yudh.</em>
+              </h2>
+              <p className="mt-6 text-xl text-[#e8c27a]" style={gurmukhi}>
+                ਖੜਗ ਸਿੰਘ ਯੁੱਧ · ਸ੍ਰੀ ਦਸਮ ਗ੍ਰੰਥ ਸਾਹਿਬ
+              </p>
             </div>
-          </div>
+            <p className="max-w-sm text-[#f4ede2]/70">
+              The war of Kharag Singh from the Dasam Granth, told scene by scene in cinematic reels — with Giani Sher Singh Ji&apos;s katha as the voice. 41 parts and counting.
+            </p>
+          </Reveal>
 
-          <div className="page-in relative mx-auto w-full max-w-sm [animation-delay:.3s]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={cover("De2-7D0BEHB")} alt="Kharag Singh Yudh, Part 41" className="relative z-10 aspect-[9/16] w-[78%] rounded-[1.75rem] border border-white/15 object-cover shadow-2xl" />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={cover("Dewq-vvTCi8")} alt="" className="absolute top-10 right-0 aspect-[9/16] w-[62%] rotate-6 rounded-[1.5rem] border border-white/10 object-cover opacity-70 shadow-2xl" />
-          </div>
-        </div>
-      </header>
-
-      {/* ---------- series ---------- */}
-      <section id="series" className="mx-auto max-w-6xl scroll-mt-10 px-5 py-24 sm:px-8">
-        <Reveal className="mb-12 flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <p className="font-mono text-xs tracking-[0.3em] text-[#8fb3ff] uppercase">The series</p>
-            <h2 className="mt-3 text-5xl font-semibold tracking-tight sm:text-6xl">41 parts and counting</h2>
-          </div>
-          <a href={insta} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-sm text-[#cfd6e4]">
-            Every part on Instagram <ArrowUpRight className="size-4" />
-          </a>
-        </Reveal>
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-          {parts.map((p, i) => (
-            <Reveal key={p.code} delay={i * 100}>
-              <a href={reel(p.code)} target="_blank" rel="noreferrer" className="group flex gap-5 rounded-3xl border border-white/10 bg-white/[0.03] p-4 transition hover:border-white/30 hover:bg-white/[0.06]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={cover(p.code)} alt="" loading="lazy" className="aspect-[9/16] w-28 shrink-0 rounded-2xl object-cover sm:w-36" />
-                <span className="flex flex-col justify-center">
-                  <span className="font-mono text-xs tracking-[0.3em] text-[#8fb3ff] uppercase">{p.part}</span>
-                  <span className="mt-3 text-2xl leading-snug font-semibold" style={gurmukhi}>
-                    ਖੜਗ ਸਿੰਘ ਯੁੱਧ
+          <div className="mt-16 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {parts.map((p, i) => (
+              <Reveal key={p.code} delay={i * 100}>
+                <a href={reel(p.code)} target="_blank" rel="noreferrer" className="group relative block overflow-hidden rounded-[1.25rem] border border-[#f4ede2]/10">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={cover(p.code)} alt="" loading="lazy" className="aspect-[4/5] w-full object-cover transition duration-1000 group-hover:scale-105" />
+                  <span className="absolute inset-0 bg-gradient-to-t from-[#05070f] via-[#05070f]/20 to-transparent" />
+                  <span className="absolute inset-x-0 bottom-0 p-6">
+                    <span className="font-mono text-[10px] tracking-[0.25em] text-[#e8c27a] uppercase">{p.part}</span>
+                    <span className="mt-2 block font-serif text-3xl leading-tight">{p.line}</span>
+                    <span className="mt-4 inline-flex items-center gap-1 text-sm opacity-80 transition group-hover:gap-2">
+                      Watch the reel <ArrowUpRight className="size-4" />
+                    </span>
                   </span>
-                  <span className="mt-2 text-white/65">{p.line}</span>
-                  <span className="mt-5 inline-flex items-center gap-1 text-sm text-[#cfd6e4] transition group-hover:gap-2">
-                    Watch <ArrowUpRight className="size-4" />
+                </a>
+              </Reveal>
+            ))}
+            <Reveal delay={200}>
+              <a href={insta} target="_blank" rel="noreferrer" className="group flex h-full min-h-[20rem] flex-col justify-between rounded-[1.25rem] border border-[#e8c27a]/30 bg-[radial-gradient(100%_80%_at_0%_0%,#e8c27a22,transparent_60%)] p-6 transition hover:border-[#e8c27a]">
+                <span className="font-mono text-[10px] tracking-[0.25em] text-[#e8c27a] uppercase">Parts 1 — 41</span>
+                <span>
+                  <span className="block font-serif text-4xl leading-tight">
+                    Every part,
+                    <br />
+                    <em>in order.</em>
+                  </span>
+                  <span className="mt-4 inline-flex items-center gap-1 text-sm opacity-80 transition group-hover:gap-2">
+                    @bhujangyy on Instagram <ArrowUpRight className="size-4" />
                   </span>
                 </span>
               </a>
             </Reveal>
-          ))}
+          </div>
+        </div>
+
+        {/* ---------- dussehra mahatam ---------- */}
+        <div id="mahatam" className="border-t border-[#f4ede2]/10">
+          <div className="mx-auto max-w-[90rem] px-5 py-24 sm:px-8">
+            <Reveal className="mb-14">
+              <p className="font-mono text-[10px] tracking-[0.25em] text-[#e8c27a] uppercase">With Giani Birbal Singh Ji</p>
+              <h2 className="mt-4 text-5xl leading-[1.25] sm:text-6xl" style={gurmukhi}>
+                ਦੁਸਹਿਰਾ ਮਹਾਤਮ
+              </h2>
+              <p className="mt-4 max-w-xl text-[#f4ede2]/65">
+                Ten days of katha and vichaar, one question each day — closing with the bhog samagam at Gurdwara Shahidi Bagh, Sri Anandpur Sahib.
+              </p>
+            </Reveal>
+            <MahatamDays days={days} />
+          </div>
+        </div>
+
+        {/* ---------- close ---------- */}
+        <div className="border-t border-[#f4ede2]/10">
+          <div className="mx-auto grid max-w-[90rem] gap-12 px-5 py-28 sm:px-8 md:grid-cols-[1.4fr_1fr] md:items-end">
+            <Reveal>
+              <h2 className="font-serif text-[clamp(3rem,7vw,6.5rem)] leading-[0.92]">
+                Walk with
+                <br />
+                <em>Bhujangyy.</em>
+              </h2>
+              <p className="mt-7 text-xl leading-relaxed text-[#e8c27a] sm:text-2xl" style={gurmukhi}>
+                ਵਾਹਿਗੁਰੂ ਜੀ ਕਾ ਖ਼ਾਲਸਾ · ਵਾਹਿਗੁਰੂ ਜੀ ਕੀ ਫ਼ਤਿਹ
+              </p>
+            </Reveal>
+            <Reveal delay={120} className="md:justify-self-end">
+              <FollowLinks />
+            </Reveal>
+          </div>
+          <div className="mx-auto flex max-w-[90rem] flex-wrap items-center justify-between gap-4 border-t border-[#f4ede2]/10 px-5 py-8 sm:px-8">
+            <span className="font-serif text-xl">Bhujangyy</span>
+            <LabFooterNote />
+          </div>
         </div>
       </section>
-
-      {/* ---------- dussehra mahatam ---------- */}
-      <section id="mahatam" className="scroll-mt-10 border-y border-white/10 bg-[#081028]">
-        <div className="mx-auto max-w-6xl px-5 py-24 sm:px-8">
-          <Reveal className="mb-14">
-            <p className="font-mono text-xs tracking-[0.3em] text-[#8fb3ff] uppercase">With Giani Birbal Singh Ji</p>
-            <h2 className="mt-3 text-5xl font-bold sm:text-6xl" style={gurmukhi}>
-              ਦੁਸਹਿਰਾ ਮਹਾਤਮ
-            </h2>
-            <p className="mt-4 max-w-xl text-white/65">
-              Ten days of katha and vichaar, one question each day — closing with the bhog samagam at Gurdwara Shahidi Bagh, Sri Anandpur Sahib.
-            </p>
-          </Reveal>
-          <MahatamDays days={days} />
-        </div>
-      </section>
-
-      {/* ---------- follow ---------- */}
-      <section className="relative overflow-hidden px-5 py-28 text-center sm:px-8">
-        <Chakkar className="absolute top-1/2 left-1/2 size-[30rem] -translate-x-1/2 -translate-y-1/2 animate-[spin_100s_linear_infinite] text-[#cfd6e4]/10" />
-        <Reveal className="relative">
-          <h2 className="text-5xl font-semibold tracking-tight sm:text-7xl">Walk with Bhujangyy.</h2>
-          <p className="mx-auto mt-5 max-w-md text-white/65">New parts and new katha, on Instagram.</p>
-          <a href={insta} target="_blank" rel="noreferrer" className="mt-9 inline-flex items-center gap-2 rounded-full bg-[#cfd6e4] px-8 py-4 text-sm font-medium text-[#050a1a] transition hover:bg-white">
-            Follow @bhujangyy <ArrowUpRight className="size-4" />
-          </a>
-        </Reveal>
-      </section>
-
-      <footer className="border-t border-white/10 px-5 py-8 text-center sm:px-8">
-        <LabFooterNote />
-      </footer>
     </div>
   )
 }
