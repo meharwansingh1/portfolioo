@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>MEHAR — Try the Look</title>
-<meta name="description" content="MEHAR ਮਿਹਰ — Punjabi heritage, cut as luxury streetwear. Six looks, shot head to toe.">
+<meta name="description" content="MEHAR ਮਿਹਰ — Punjabi heritage, cut as luxury streetwear. Looks shot head to toe, 26 pieces, a monogram atelier and every rupee shown.">
 <meta property="og:title" content="MEHAR — Try the Look">
-<meta property="og:description" content="Punjabi heritage, cut as luxury streetwear. Six looks, shot head to toe.">
+<meta property="og:description" content="Punjabi heritage, cut as luxury streetwear. Fourteen looks, shot head to toe.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://d2ol7oe51mr4n9.cloudfront.net" crossorigin>
@@ -247,6 +247,256 @@ footer{border-top:1px solid var(--line);padding:26px max(20px,env(safe-area-inse
   .dots{display:none}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* ================= expanded store ================= */
+.kick{margin:0 0 14px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--kesar)}
+.sec{border-top:1px solid var(--line);padding:96px max(20px,env(safe-area-inset-left)) 96px;max-width:1440px;margin:0 auto}
+.sec h2,.drop h2{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(36px,5vw,68px);line-height:1;letter-spacing:-.01em;text-wrap:balance}
+.sec h2 em,.drop h2 em{font-style:italic;color:var(--kesar)}
+.sech{display:flex;justify-content:space-between;align-items:end;gap:28px;flex-wrap:wrap;margin-bottom:44px}
+.sub{margin:18px 0 0;max-width:46ch;color:var(--muted);line-height:1.65}
+.sech .sub{margin:0}
+
+/* ticker */
+.ticker{overflow:hidden;border-top:1px solid var(--line);background:var(--ink);color:var(--paper)}
+.tk{display:flex;gap:56px;width:max-content;padding:13px 0;font-size:12px;letter-spacing:.2em;text-transform:uppercase;animation:tk 38s linear infinite}
+.tk span{display:inline-flex;align-items:center;gap:56px}
+.tk span::after{content:"✦";color:#c08a55;font-size:10px}
+@keyframes tk{to{transform:translateX(-50%)}}
+
+/* collection */
+.toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:26px;position:sticky;top:57px;z-index:20;padding:12px 0;background:color-mix(in srgb,var(--studio) 92%,transparent);backdrop-filter:blur(8px)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips button{height:36px;padding:0 16px;border:1px solid var(--line);border-radius:999px;font-size:13px;color:var(--muted);transition:all .25s}
+.chips button:hover{color:var(--ink);border-color:var(--ink)}
+.chips button.on{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.chips button i{font-style:normal;opacity:.55;margin-left:6px;font-size:11px}
+.sort{display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.sort select{font:inherit;font-size:13px;letter-spacing:0;text-transform:none;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:999px;height:36px;padding:0 14px}
+.grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:34px 22px}
+.card{position:relative;opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.card.in{opacity:1;transform:none}
+.cimg{position:relative;display:block;width:100%;aspect-ratio:4/5;background:var(--paper);overflow:hidden;cursor:pointer}
+.cimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:9%;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.card:hover .cimg img{transform:scale(1.06)}
+.badge{position:absolute;top:12px;left:12px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:5px 8px}
+.badge.k{background:var(--kesar)}
+.heart{position:absolute;top:8px;right:8px;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--paper) 85%,transparent);opacity:0;transform:scale(.85);transition:all .3s}
+.card:hover .heart,.heart.on,.heart:focus-visible{opacity:1;transform:none}
+.heart svg{width:17px;height:17px}
+.heart.on svg{fill:var(--kesar);stroke:var(--kesar)}
+.quick{position:absolute;left:12px;right:12px;bottom:12px;height:42px;background:var(--ink);color:var(--paper);font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:all .35s}
+.card:hover .quick,.quick:focus-visible{opacity:1;transform:none}
+.cmeta{padding-top:14px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:3px 12px}
+.cmeta h3{margin:0;font-size:15px;font-weight:500}
+.cmeta .pr{font-size:14px;font-variant-numeric:tabular-nums}
+.cmeta .ln{grid-column:1/-1;font-size:12px;color:var(--muted)}
+.gcount{margin:36px 0 0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-align:center}
+@media (hover:none){.heart{opacity:1;transform:none}.quick{display:none}}
+
+/* lookbook reel */
+.reel{display:grid;grid-auto-flow:column;grid-auto-columns:min(420px,78vw);gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:18px;cursor:grab;scrollbar-width:thin}
+.reel.drag{cursor:grabbing;scroll-snap-type:none}
+.lk{scroll-snap-align:start;position:relative;background:var(--paper);aspect-ratio:3/4.2;overflow:hidden}
+.lk img.m{position:absolute;left:50%;bottom:0;height:92%;transform:translateX(-50%);object-fit:contain;transition:transform 1s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+.lk:hover img.m{transform:translateX(-50%) scale(1.03)}
+.lk .n{position:absolute;left:20px;top:18px;font-family:var(--display);font-size:64px;line-height:1;color:rgba(20,19,17,.08)}
+.lk .cap{position:absolute;left:20px;right:20px;bottom:18px;display:flex;justify-content:space-between;align-items:end;gap:10px}
+.lk .cap b{font-family:var(--display);font-style:italic;font-weight:400;font-size:28px}
+.lk .cap span{font-family:var(--gur);color:var(--kesar)}
+.lk .cap button{font-size:11px;letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:2px}
+
+/* fit finder */
+.fitgrid,.atgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:72px;align-items:center}
+.ctrl{margin-top:26px}
+.ctrl label,.ctrl .lbl{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.ctrl label b{color:var(--ink);font-weight:500;letter-spacing:.02em;text-transform:none;font-size:14px;font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;-webkit-appearance:none;appearance:none;height:2px;background:var(--line);outline-offset:8px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--ink);border:4px solid var(--paper);box-shadow:0 1px 6px rgba(0,0,0,.25)}
+input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--ink);border:4px solid var(--paper)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px}
+.seg button{height:34px;padding:0 16px;border-radius:999px;font-size:13px;color:var(--muted);transition:all .25s}
+.seg button.on{background:var(--ink);color:var(--paper)}
+.fitcard{background:var(--paper);padding:34px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 30px;align-items:center}
+.fitsize{grid-column:1/-1;display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:18px}
+.fitsize span{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.fitsize b{font-family:var(--display);font-weight:400;font-size:84px;line-height:.9;transition:transform .4s}
+.fitsize b.pop{transform:scale(1.12)}
+.fitfig{width:150px;height:240px}
+.fitfig .body{fill:var(--line)}
+.fitfig .cloth{fill:var(--ink);transition:all .5s}
+.fitnotes{list-style:none;margin:0;padding:0;display:grid;gap:12px;font-size:13px;line-height:1.5}
+.fitnotes li{display:grid;grid-template-columns:86px minmax(0,1fr);gap:10px}
+.fitnotes li span{color:var(--muted)}
+
+/* atelier */
+.atview{background:#2a2928;aspect-ratio:1;display:grid;place-items:center;position:relative;overflow:hidden}
+.atchest{position:absolute;inset:0;background:
+  radial-gradient(120% 80% at 30% 20%,rgba(255,255,255,.08),transparent 55%),
+  repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 2px,transparent 2px 4px),
+  radial-gradient(60% 60% at 70% 70%,#3c3a38,#232221);display:grid;place-items:center}
+.atchest span{font-family:var(--display);font-size:clamp(70px,11vw,150px);letter-spacing:.08em;line-height:1;transition:all .4s;
+  color:#d9d9d9;background:linear-gradient(180deg,#fff 0%,#a9a9a9 45%,#f2f2f2 55%,#7d7d7d 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 2px 0 rgba(0,0,0,.55)) drop-shadow(0 -1px 0 rgba(255,255,255,.2))}
+.atchest.copper span{background:linear-gradient(180deg,#ffd9b0 0%,#b0683a 45%,#f0b37c 55%,#7a3c18 100%);-webkit-background-clip:text;background-clip:text}
+.atchest.tonal span{background:linear-gradient(180deg,#4a4846,#2e2d2c);-webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 1px 0 rgba(255,255,255,.12)) drop-shadow(0 -1px 0 rgba(0,0,0,.6))}
+.atchest.gur span{font-family:var(--gur);letter-spacing:0}
+.atcap{position:absolute;left:0;right:0;bottom:18px;margin:0;text-align:center;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+#atin{width:100%;height:58px;border:0;border-bottom:1px solid var(--ink);background:transparent;font-family:var(--display);font-size:34px;letter-spacing:.2em;text-transform:uppercase;outline:none}
+.gurpad{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.gurpad button{width:40px;height:40px;border:1px solid var(--line);font-family:var(--gur);font-size:18px;transition:all .2s}
+.gurpad button:hover{border-color:var(--ink)}
+.atel .cta{margin-top:30px;max-width:380px}
+
+/* craft map */
+.mapgrid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:48px;align-items:center}
+.map{width:100%;height:auto;background:var(--paper)}
+.map .land{fill:#ebe8e2;stroke:#d8d3ca;stroke-width:1.2}
+.map .river{fill:none;stroke:#cfd8de;stroke-width:2;stroke-linecap:round}
+.map .rl{font-size:10px;fill:#9fb0ba;font-style:italic;font-family:var(--display)}
+.map .city{cursor:pointer}
+.map .city circle.d{fill:var(--ink);transition:r .3s}
+.map .city circle.r{fill:none;stroke:var(--kesar);stroke-width:1.2;opacity:0;transform-box:fill-box;transform-origin:center}
+.map .city.on circle.d{fill:var(--kesar)}
+.map .city.on circle.r{opacity:1;animation:mp 2.2s infinite}
+.map .city text{font-size:12px;fill:var(--ink);font-family:var(--ui);letter-spacing:.04em}
+.map .city.hq text{font-weight:600}
+@keyframes mp{0%{transform:scale(.6);opacity:1}100%{transform:scale(2.4);opacity:0}}
+.mapcard{animation:swap .5s ease}
+.mapcard h3{margin:0;font-family:var(--display);font-weight:400;font-size:40px}
+.mapcard .g{font-family:var(--gur);color:var(--kesar);font-size:16px;margin-top:4px}
+.mapcard p{color:#3a3732;line-height:1.65;margin:16px 0}
+.mapcard dl{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;font-size:13px;border-top:1px solid var(--line);padding-top:16px;margin:0}
+.mapcard dt{color:var(--muted)}.mapcard dd{margin:0}
+.mapcard ul{list-style:none;padding:0;margin:18px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.mapcard li button{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:7px 12px;transition:border-color .2s}
+.mapcard li button:hover{border-color:var(--ink)}
+
+/* journal */
+.jgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}
+.jc{display:block;text-decoration:none;cursor:pointer;text-align:left}
+.jc .ji{aspect-ratio:4/3;overflow:hidden;background:#222;position:relative}
+.jc .ji img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.jc:hover .ji img{transform:scale(1.06)}
+.jc .ji i{position:absolute;left:14px;top:14px;font-style:normal;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.35);padding:5px 8px;backdrop-filter:blur(4px)}
+.jc h3{margin:16px 0 6px;font-family:var(--display);font-weight:400;font-size:24px;line-height:1.15}
+.jc p{margin:0;color:var(--muted);font-size:13px;line-height:1.6}
+.jc .more{display:inline-block;margin-top:12px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid currentColor}
+.jfull{grid-column:1/-1;background:var(--paper);padding:36px clamp(20px,5vw,64px);animation:swap .5s ease;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:44px}
+.jfull h3{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(28px,3vw,40px);line-height:1.1}
+.jfull .body p{margin:0 0 14px;line-height:1.75;color:#3a3732}
+.jfull .x{margin-top:18px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid currentColor}
+
+/* faq */
+.fgrid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:60px}
+.acc details{border-top:1px solid var(--line)}
+.acc details:last-child{border-bottom:1px solid var(--line)}
+.acc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding:22px 0;font-size:17px}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"+";font-size:22px;line-height:1;transition:transform .3s;color:var(--muted)}
+.acc details[open] summary::after{transform:rotate(45deg)}
+.acc .a{padding:0 0 22px;color:#3a3732;line-height:1.7;max-width:62ch}
+
+/* first drop */
+.drop{background:var(--ink);color:var(--paper);text-align:center;padding:110px 20px}
+.drop .kick{color:#c08a55}
+.drop h2 em{color:#e0a974}
+.cd{display:flex;justify-content:center;gap:clamp(18px,5vw,64px);margin:46px 0;font-variant-numeric:tabular-nums}
+.cd b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(44px,7vw,96px);line-height:1}
+.cd span{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(251,250,248,.5)}
+.join{display:flex;max-width:480px;margin:0 auto;border-bottom:1px solid rgba(251,250,248,.5)}
+.join input{flex:1;min-width:0;height:54px;background:transparent;border:0;color:var(--paper);font:inherit;font-size:16px;outline:none}
+.join input::placeholder{color:rgba(251,250,248,.45)}
+.join button{font-size:12px;letter-spacing:.16em;text-transform:uppercase;padding:0 4px}
+.jnote{font-size:12px;color:rgba(251,250,248,.5);margin:16px 0 0}
+
+/* recent */
+.recent{max-width:1440px;margin:0 auto;padding:40px max(20px,env(safe-area-inset-left)) 60px;border-top:1px solid var(--line)}
+.recent h3{margin:0 0 18px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.recent ul{list-style:none;margin:0;padding:0;display:flex;gap:14px;overflow-x:auto}
+.recent li button{display:block;width:120px;text-align:left}
+.recent li .ri{aspect-ratio:4/5;background:var(--paper)}
+.recent li .ri img{width:100%;height:100%;object-fit:contain;padding:8px}
+.recent li span{display:block;font-size:12px;margin-top:8px}
+
+/* quick view */
+.qv{position:fixed;inset:0;z-index:220;background:rgba(20,19,17,.4);display:grid;place-items:center;padding:20px;animation:fade .3s ease}
+@keyframes fade{from{opacity:0}}
+.qvbox{position:relative;width:min(1040px,100%);max-height:calc(100vh - 40px);overflow:auto;background:var(--paper);display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);animation:swap .4s ease}
+.qvx{position:absolute;top:14px;right:14px;z-index:2;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--paper)}
+.qvimg{background:var(--studio);aspect-ratio:4/5;position:relative;overflow:hidden;cursor:zoom-in}
+.qvimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8%;transition:transform .4s ease}
+.qvimg.z img{transform:scale(2);cursor:zoom-out}
+.qvinfo{padding:38px 34px 32px;display:flex;flex-direction:column}
+.qvinfo h2{margin:10px 0 4px;font-family:var(--display);font-weight:400;font-size:34px;line-height:1.1}
+.qvinfo .pp{font-size:20px;font-variant-numeric:tabular-nums;margin-top:8px}
+.qvinfo .story{line-height:1.65;color:#3a3732;font-size:14px;margin:16px 0 0}
+.sizes{margin-top:22px}
+.sizes .lbl{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.sizes .lbl a{text-transform:none;letter-spacing:0;color:var(--ink)}
+.sz{display:flex;flex-wrap:wrap;gap:8px}
+.sz button{min-width:52px;height:44px;border:1px solid var(--line);font-size:13px;transition:all .2s}
+.sz button:hover{border-color:var(--ink)}
+.sz button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.sz button.rec{position:relative}
+.sz button.rec::after{content:"Your fit";position:absolute;left:50%;top:-9px;transform:translateX(-50%);font-size:9px;letter-spacing:.1em;background:var(--kesar);color:#fff;padding:1px 5px;white-space:nowrap}
+.qvrow{display:flex;gap:10px;margin-top:22px}
+.qvrow .cta{margin:0;flex:1}
+.qvrow .heart2{width:54px;height:54px;border:1px solid var(--line);display:grid;place-items:center;flex:none}
+.qvrow .heart2.on svg{fill:var(--kesar);stroke:var(--kesar)}
+.qvinfo .specs{margin-top:24px}
+
+/* search */
+.srch{position:fixed;inset:0;z-index:230;background:rgba(20,19,17,.35);backdrop-filter:blur(6px);padding:10vh 20px 20px;animation:fade .25s ease}
+.srbox{max-width:720px;margin:0 auto;background:var(--paper);box-shadow:0 30px 80px rgba(0,0,0,.25)}
+.srin{display:flex;align-items:center;gap:14px;padding:0 22px;border-bottom:1px solid var(--line)}
+.srin input{flex:1;height:66px;border:0;background:transparent;font:inherit;font-size:19px;outline:none;min-width:0}
+.srin button{font-size:11px;letter-spacing:.14em;color:var(--muted);border:1px solid var(--line);padding:4px 8px}
+.srres{list-style:none;margin:0;padding:8px;max-height:60vh;overflow:auto}
+.srres button{display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:14px;align-items:center;width:100%;padding:8px;text-align:left}
+.srres button:hover,.srres button.on{background:var(--studio)}
+.srres .si{width:56px;height:64px;background:var(--studio)}
+.srres .si img{width:100%;height:100%;object-fit:contain;padding:4px}
+.srres b{font-weight:500;display:block}
+.srres small{color:var(--muted)}
+.srres .none{padding:28px;text-align:center;color:var(--muted)}
+
+.iconbtn{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:50%;position:relative;transition:background .2s}
+.iconbtn:hover{background:rgba(20,19,17,.06)}
+.iconbtn svg{width:18px;height:18px}
+.iconbtn i{position:absolute;top:2px;right:0;font-style:normal;min-width:16px;height:16px;border-radius:8px;background:var(--kesar);color:#fff;font-size:10px;display:grid;place-items:center;padding:0 4px}
+.iconbtn i:empty,.iconbtn i[data-n="0"]{display:none}
+.right{display:flex;align-items:center;gap:6px}
+
+/* footer */
+.foot{border-top:1px solid var(--line);max-width:1440px;margin:0 auto;padding:64px max(20px,env(safe-area-inset-left)) 30px;display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:40px}
+.foot .logo b{font-size:28px}
+.foot p{color:var(--muted);line-height:1.6;font-size:13px;max-width:34ch}
+.foot h4{margin:0 0 14px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:14px}
+.foot a{text-decoration:none}
+.foot a:hover{text-decoration:underline}
+
+@media (max-width:1100px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:1000px){
+  .sec{padding-top:72px;padding-bottom:72px}
+  .fitgrid,.atgrid,.mapgrid,.fgrid,.jfull{grid-template-columns:1fr;gap:36px}
+  .jgrid{grid-template-columns:1fr}
+  .qvbox{grid-template-columns:1fr}
+  .qvimg{aspect-ratio:1}
+  .foot{grid-template-columns:1fr 1fr}
+  .toolbar{top:57px}
+}
+@media (max-width:640px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 12px}
+  .chips{flex-wrap:nowrap;overflow-x:auto;width:100%;padding-bottom:4px}
+  .chips button{flex:none}
+  .fitcard{padding:22px;grid-template-columns:1fr}
+  .fitfig{justify-self:center}
+  .fitnotes li{grid-template-columns:76px minmax(0,1fr)}
+  .cmeta h3{font-size:13px}
+  .foot{grid-template-columns:1fr}
+}
+
 </style>
 </head>
 <body>
@@ -255,10 +505,17 @@ footer{border-top:1px solid var(--line);padding:26px max(20px,env(safe-area-inse
   <a class="logo" href="#top" aria-label="MEHAR home"><b>MEHAR</b><span>ਮਿਹਰ</span></a>
   <nav class="nav" aria-label="Main">
     <a href="#top" class="on">Try the Look</a>
-    <a href="#fabric">The Cloth</a>
-    <a href="#about">House</a>
+    <a href="#collection">Collection</a>
+    <a href="#fit">Fit</a>
+    <a href="#atelier">Atelier</a>
+    <a href="#craft">Workshops</a>
+    <a href="#journal">Journal</a>
   </nav>
-  <button class="bagbtn" id="openBag" aria-label="Open bag">Bag <i id="bagCount">0</i></button>
+  <div class="right">
+    <button class="iconbtn" id="openSearch" aria-label="Search (press /)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg></button>
+    <button class="iconbtn" id="openW" aria-label="Saved pieces"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><i id="wCount"></i></button>
+    <button class="bagbtn" id="openBag" aria-label="Open bag">Bag <i id="bagCount">0</i></button>
+  </div>
 </header>
 
 <main class="shop" id="top">
@@ -295,7 +552,7 @@ footer{border-top:1px solid var(--line);padding:26px max(20px,env(safe-area-inse
     <ul class="items" id="items"></ul>
     <div class="bundle">
       <div class="brow">
-        <div><h4>Complete the look</h4><p>Bundle all 3 and save 10%</p></div>
+        <div><h4>Complete the look</h4><p id="bundleTxt">Bundle all 3 and save 10%</p></div>
         <div class="tot"><s id="full">₹0</s><b id="disc">₹0</b></div>
       </div>
       <button class="cta" id="addLook"><span>Add full look to bag</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
@@ -305,7 +562,7 @@ footer{border-top:1px solid var(--line);padding:26px max(20px,env(safe-area-inse
   </aside>
 </main>
 
-<section class="fabric" id="fabric">
+<section class="fabric" id="fabric" style="padding-top:96px">
   <div class="lead">
     <h2>Cloth first. Logo last.</h2>
     <p id="about">MEHAR (ਮਿਹਰ, grace) is a Punjabi house that treats heritage as a material, not a print. Phulkari geometry is thread-guided by hand, Gurmukhi is embossed rather than screened, and every piece is cut long and wide for a 6 ft frame.</p>
@@ -315,10 +572,139 @@ footer{border-top:1px solid var(--line);padding:26px max(20px,env(safe-area-inse
   <div class="spec"><div class="n">14<small>oz</small></div><h3>Selvedge denim</h3><p>Rigid Japanese selvedge cut in a wide pool leg. It breaks in to you, not the other way round.</p></div>
 </section>
 
-<footer>
-  <span>© 2026 MEHAR ਮਿਹਰ · Anandpur Sahib, Punjab</span>
-  <span>Concept brand &amp; site by <a href="../">Meharwan Singh</a></span>
+<div class="ticker" aria-hidden="true"><div class="tk"><span>Made by hand in Punjab</span><span>Every rupee shown</span><span>Free shipping across India</span><span>Cut for a 6 ft frame</span><span>Repairs for life</span><span>ਮਿਹਰ · grace</span><span>Made by hand in Punjab</span><span>Every rupee shown</span><span>Free shipping across India</span><span>Cut for a 6 ft frame</span><span>Repairs for life</span><span>ਮਿਹਰ · grace</span></div></div>
+
+<!-- ============ the collection ============ -->
+<section class="sec coll" id="collection">
+  <div class="sech">
+    <div><p class="kick">02 — The collection</p><h2>Every piece,<br><em>on the paper.</em></h2></div>
+    <p class="sub">Twenty-six pieces across the first two drops. Filter, sort, open any piece for its cloth, its sizes and where every rupee goes.</p>
+  </div>
+  <div class="toolbar">
+    <div class="chips" id="chips" role="tablist" aria-label="Filter by category"></div>
+    <label class="sort">Sort<select id="sort"><option value="feat">Featured</option><option value="new">New in</option><option value="lo">Price, low to high</option><option value="hi">Price, high to low</option></select></label>
+  </div>
+  <ul class="grid" id="grid"></ul>
+  <p class="gcount" id="gcount"></p>
+</section>
+
+<!-- ============ lookbook ============ -->
+<section class="sec book" id="lookbook">
+  <div class="sech">
+    <div><p class="kick">03 — Lookbook</p><h2>Fourteen looks,<br><em>one river of cloth.</em></h2></div>
+    <p class="sub">Named after the land between the rivers. Scroll sideways — or drag — through the first collection.</p>
+  </div>
+  <div class="reel" id="reel" tabindex="0" aria-label="Lookbook, scroll sideways"></div>
+</section>
+
+<!-- ============ fit finder ============ -->
+<section class="sec fit" id="fit">
+  <div class="fitgrid">
+    <div>
+      <p class="kick">04 — Fit finder</p>
+      <h2>Your size,<br><em>in ten seconds.</em></h2>
+      <p class="sub">MEHAR is cut long and wide for tall frames. Tell us your height and build and we'll tell you the size — and why.</p>
+      <div class="ctrl"><label for="fh">Height <b id="fhv">183 cm · 6′0″</b></label><input type="range" id="fh" min="155" max="200" value="183"></div>
+      <div class="ctrl"><label for="fw">Weight <b id="fwv">78 kg</b></label><input type="range" id="fw" min="50" max="120" value="78"></div>
+      <div class="ctrl"><span class="lbl">How you like it</span><div class="seg" id="fpref"><button data-v="-1">Close</button><button data-v="0" class="on">As cut</button><button data-v="1">Roomy</button></div></div>
+    </div>
+    <div class="fitcard" aria-live="polite">
+      <div class="fitsize"><span>Your MEHAR size</span><b id="fsize">L</b></div>
+      <svg class="fitfig" id="ffig" viewBox="0 0 200 320" aria-hidden="true"></svg>
+      <ul class="fitnotes" id="fnotes"></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ monogram atelier ============ -->
+<section class="sec atel" id="atelier">
+  <div class="atgrid">
+    <div class="atview">
+      <div class="atchest" id="atchest"><span id="atmark">MS</span></div>
+      <p class="atcap">Preview on 520 GSM loopback fleece · chest, 9 cm</p>
+    </div>
+    <div>
+      <p class="kick">05 — Atelier</p>
+      <h2>Your initials,<br><em>pressed in metal.</em></h2>
+      <p class="sub">Any hoodie or crew can carry a monogram, heat-embossed by hand in Ludhiana. English or Gurmukhi, up to three letters.</p>
+      <div class="ctrl"><label for="atin">Letters</label><input id="atin" maxlength="3" value="MS" autocomplete="off" spellcheck="false"></div>
+      <div class="ctrl"><span class="lbl">Script</span><div class="seg" id="atscript"><button class="on" data-v="lat">English</button><button data-v="gur">ਗੁਰਮੁਖੀ</button></div></div>
+      <div class="gurpad" id="gurpad" hidden></div>
+      <div class="ctrl"><span class="lbl">Finish</span><div class="seg" id="atfin"><button class="on" data-v="chrome">Chrome</button><button data-v="copper">Copper</button><button data-v="tonal">Tonal</button></div></div>
+      <button class="cta" id="atadd"><span>Add monogram · ₹990</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ where it's made ============ -->
+<section class="sec craft" id="craft">
+  <div class="sech">
+    <div><p class="kick">06 — Where it's made</p><h2>Seven workshops,<br><em>no factories.</em></h2></div>
+    <p class="sub">Every MEHAR piece can be traced to the town and the hands that made it. Tap a workshop.</p>
+  </div>
+  <div class="mapgrid">
+    <svg class="map" id="map" viewBox="0 0 600 520" role="img" aria-label="Map of MEHAR workshops"></svg>
+    <div class="mapcard" id="mapcard" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ============ journal ============ -->
+<section class="sec jour" id="journal">
+  <div class="sech">
+    <div><p class="kick">07 — Journal</p><h2>Notes from<br><em>the workshop.</em></h2></div>
+  </div>
+  <div class="jgrid" id="jgrid"></div>
+</section>
+
+<!-- ============ care & questions ============ -->
+<section class="sec faq" id="care">
+  <div class="fgrid">
+    <div><p class="kick">08 — Care &amp; questions</p><h2>Made to last.<br><em>Here's how.</em></h2></div>
+    <div class="acc" id="acc"></div>
+  </div>
+</section>
+
+<!-- ============ first drop ============ -->
+<section class="drop" id="drop">
+  <p class="kick">The first drop</p>
+  <h2>Vaisakhi, <em>13 April 2027.</em></h2>
+  <div class="cd" id="cd" aria-live="off"><div><b>—</b><span>days</span></div><div><b>—</b><span>hours</span></div><div><b>—</b><span>minutes</span></div><div><b>—</b><span>seconds</span></div></div>
+  <form class="join" id="join" novalidate><input type="email" id="jemail" placeholder="Your email" aria-label="Your email" autocomplete="email" required><button type="submit">Get first access</button></form>
+  <p class="jnote" id="jnote">One email when the drop opens. Nothing else.</p>
+</section>
+
+<section class="recent" id="recentWrap" hidden><h3>Recently viewed</h3><ul id="recent"></ul></section>
+
+<!-- quick view -->
+<div class="qv" id="qv" role="dialog" aria-modal="true" aria-labelledby="qvTitle" hidden>
+  <div class="qvbox">
+    <button class="qvx" id="qvx" aria-label="Close"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div class="qvimg"><img id="qvImg" alt=""></div>
+    <div class="qvinfo" id="qvInfo"></div>
+  </div>
+</div>
+
+<!-- search -->
+<div class="srch" id="srch" role="dialog" aria-modal="true" aria-label="Search" hidden>
+  <div class="srbox">
+    <div class="srin"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg><input id="srq" placeholder="Search hoodies, merino, juttis…" autocomplete="off"><button id="srx">Esc</button></div>
+    <ul class="srres" id="srres"></ul>
+  </div>
+</div>
+
+<!-- wishlist -->
+<aside class="drawer" id="wdrawer" aria-label="Saved" aria-hidden="true">
+  <div class="dh"><h2>Saved pieces</h2><button id="closeW" aria-label="Close saved"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <ul class="dl" id="wList"></ul>
+</aside>
+
+<footer class="foot">
+  <div><a class="logo" href="#top"><b>MEHAR</b><span>ਮਿਹਰ</span></a><p>Punjabi heritage, cut as luxury streetwear. Designed in Anandpur Sahib, made by hand across seven workshops.</p></div>
+  <div><h4>Shop</h4><ul><li><a href="#top">Try the Look</a></li><li><a href="#collection">The collection</a></li><li><a href="#lookbook">Lookbook</a></li><li><a href="#atelier">Monogram atelier</a></li></ul></div>
+  <div><h4>Help</h4><ul><li><a href="#fit">Fit finder</a></li><li><a href="#care">Care &amp; repairs</a></li><li><a href="#care">Shipping</a></li><li><a href="#drop">First drop</a></li></ul></div>
+  <div><h4>House</h4><ul><li><a href="#fabric">The cloth</a></li><li><a href="#craft">Workshops</a></li><li><a href="#journal">Journal</a></li></ul></div>
 </footer>
+<footer><span>© 2026 MEHAR ਮਿਹਰ · Anandpur Sahib, Punjab</span><span>Concept brand &amp; site by <a href="../">Meharwan Singh</a></span></footer>
 
 <div class="scrim" id="scrim"></div>
 <aside class="drawer" id="drawer" aria-label="Bag" aria-hidden="true">
@@ -423,6 +809,57 @@ const D={
     hours:7,cost:[["Yarn",33],["Hand framing",22],["Linking",8],["Finishing",6],["Freight & checks",5],["MEHAR margin",26]],
     calls:[[28,30,"Hand-framed Aran cable"],[56,58,"Lofty washed lambswool"],[20,78,"7-gauge, 780 g"]]}
 };
+const CATS=[["all","All"],["outer","Outerwear"],["shirts","Shirts & knits"],["tops","Hoodies & tees"],["bottoms","Trousers & denim"],["shoes","Footwear"],["acc","Accessories"]];
+const CAT={virsa_hoodie:"tops",sawaar_hoodie:"tops",phulkari_tee:"tops",merino_crew:"shirts",cable_crew:"shirts",overshirt:"outer",trouser_black:"bottoms",trouser_ecru:"bottoms",trouser_cream:"bottoms",cargo:"bottoms",denim:"bottoms",loafer_black:"shoes",loafer_suede:"shoes",boot:"shoes",sneaker:"shoes"};
+const NEWP={
+  kesar_bomber:{name:"Kesar Bomber",line:"Saffron & black · phulkari chest",fab:"Duchess satin, quilted viscose lining",price:14900,cat:"outer",
+    story:"A heavy duchess satin in kesar, the colour of the Nishan Sahib's cloth, with a band of phulkari geometry hand-guided across the chest. Quilted inside, so it works from Lohri to Holla Mohalla.",
+    specs:[["Shell","Duchess satin, 280 GSM"],["Lining","Quilted viscose"],["Origin","Embroidered in Patiala, tailored in Ludhiana"],["Construction","Raglan sleeves, double-zip, rib trims"],["Finish","Hand-guided phulkari, 22,000 stitches"],["Care","Dry clean"]],
+    hours:11,cost:[["Satin & lining",24],["Phulkari embroidery",22],["Tailoring",20],["Trims & zip",6],["Freight & checks",5],["MEHAR margin",23]]},
+  band_shirt:{name:"Band-Collar Shirt",line:"White poplin · cuff embroidery",fab:"120s two-ply cotton poplin",price:5490,cat:"shirts",
+    story:"A clean band collar in two-ply 120s poplin, with ਮ embroidered white-on-white on the left cuff — you only see it when you roll the sleeve.",
+    specs:[["Fabric","100% cotton poplin, 120s two-ply"],["Origin","Woven in Ludhiana, sewn in Delhi"],["Construction","Band collar, single-needle seams, 22 SPI"],["Finish","Tonal cuff monogram"],["Buttons","Mother-of-pearl"],["Care","Machine wash cold, iron damp"]],
+    hours:3.5,cost:[["Fabric",28],["Sewing",24],["Embroidery",6],["Buttons",6],["Freight & checks",6],["MEHAR margin",30]]},
+  overcoat:{name:"Anandpur Overcoat",line:"Camel · single-breasted",fab:"Double-faced camel wool, 680 GSM",price:24900,cat:"outer",
+    story:"Double-faced camel wool, cut long enough to clear the knee on a tall frame and hand-finished at every edge, so there is no lining to wear out. Named for the town the house calls home.",
+    specs:[["Fabric","90% wool, 10% camel hair, double-faced"],["Weight","680 GSM"],["Origin","Woven in Amritsar, tailored in Ludhiana"],["Construction","Unlined, hand-closed edges, 3-button front"],["Finish","Horn buttons, half-canvas chest"],["Care","Dry clean, brush after wear"]],
+    hours:18,cost:[["Fabric",34],["Hand tailoring",26],["Horn & canvas",6],["Finishing",5],["Freight & checks",4],["MEHAR margin",25]]},
+  khadi_shirt:{name:"Charkha Khadi Shirt",line:"Natural · hand-spun",fab:"Hand-spun, handloom khadi linen",price:6290,cat:"shirts",
+    story:"Spun on a charkha and woven on a pit loom, so the slub of every thread shows. It starts crisp and softens with every wash into the most comfortable shirt you own.",
+    specs:[["Fabric","Hand-spun khadi linen"],["Weight","150 GSM"],["Origin","Spun and woven by a cooperative near Ludhiana"],["Construction","Camp collar, French seams"],["Buttons","Mother-of-pearl"],["Care","Cold wash, line dry"]],
+    hours:6,cost:[["Spinning & weaving",34],["Sewing",20],["Buttons",6],["Washing",5],["Freight & checks",5],["MEHAR margin",30]]},
+  chore:{name:"Vanjara Chore Jacket",line:"Indigo canvas",fab:"12 oz indigo-dyed cotton canvas",price:10900,cat:"outer",
+    story:"A workwear jacket in rope-dyed indigo canvas that fades to your movement, with three patch pockets bar-tacked to last a lifetime of use.",
+    specs:[["Fabric","100% cotton canvas, rope-dyed indigo"],["Weight","12 oz"],["Origin","Dyed in Kanpur, sewn in Ludhiana"],["Construction","Chain-stitched seams, 3 patch pockets"],["Hardware","Corozo buttons"],["Care","Wash rarely, cold, inside out"]],
+    hours:6.5,cost:[["Fabric & dye",28],["Sewing",24],["Hardware",6],["Washing",6],["Freight & checks",6],["MEHAR margin",30]]},
+  zari_polo:{name:"Tilla Knit Polo",line:"Charcoal · gold tipping",fab:"14-gauge mercerised cotton knit",price:6890,cat:"shirts",
+    story:"A fine knit polo with a single line of real zari — the gold thread of Punjabi wedding cloth — run along the collar edge by hand.",
+    specs:[["Fabric","Mercerised cotton, 14-gauge"],["Origin","Knitted in Ludhiana, tipped in Amritsar"],["Construction","Fully fashioned, linked collar"],["Finish","Hand-applied zari tipping"],["Care","Hand wash cold, dry flat"]],
+    hours:4.5,cost:[["Yarn",28],["Knitting & linking",20],["Zari tipping",12],["Finishing",5],["Freight & checks",5],["MEHAR margin",30]]},
+  track_pant:{name:"Fleece Track Pant",line:"Charcoal",fab:"520 GSM loopback fleece",price:5490,cat:"bottoms",
+    story:"The same 520 GSM fleece as the Virsa hoodie, cut in a long tapered leg with ribbed cuffs that sit right on a 6 ft frame.",
+    specs:[["Fabric","100% combed cotton loopback fleece"],["Weight","520 GSM"],["Origin","Knitted and sewn in Ludhiana"],["Construction","Flatlock seams, drawcord waist, zip back pocket"],["Finish","Garment-dyed charcoal"],["Care","Cold wash, dry flat"]],
+    hours:3.5,cost:[["Fabric",30],["Cutting & sewing",22],["Dye",8],["Trims",6],["Freight & checks",6],["MEHAR margin",28]]},
+  stole:{name:"Phulkari Silk Stole",line:"Copper, ivory & black",fab:"Mulberry silk, hand phulkari",price:8900,cat:"acc",
+    story:"Mulberry silk carrying a full field of hand phulkari in copper and ivory — about two days of an artisan's work. Worn over a coat, it does what a logo never could.",
+    specs:[["Fabric","100% mulberry silk"],["Size","200 × 70 cm"],["Origin","Embroidered by artisans in Patiala"],["Finish","Hand phulkari, hand-rolled edges"],["Care","Dry clean only"]],
+    hours:16,cost:[["Silk",22],["Phulkari embroidery",36],["Finishing",8],["Box",4],["Freight & checks",5],["MEHAR margin",25]]},
+  weekender:{name:"Doaba Weekender",line:"Tan full-grain",fab:"Vegetable-tanned full-grain leather",price:21900,cat:"acc",
+    story:"Vegetable-tanned leather that darkens to a deep honey over the years, saddle-stitched by hand with brass hardware. Big enough for three days between the rivers.",
+    specs:[["Leather","Vegetable-tanned full grain, 2 mm"],["Origin","Made by hand in Kanpur"],["Construction","Saddle-stitched, cotton-twill lined"],["Hardware","Solid brass"],["Size","52 × 28 × 26 cm"],["Care","Condition twice a year"]],
+    hours:16,cost:[["Leather",34],["Hand stitching",22],["Brass hardware",8],["Lining",4],["Freight & checks",5],["MEHAR margin",27]]},
+  jutti:{name:"Patiala Jutti",line:"Black calf · copper thread",fab:"Calf leather, hand embroidery",price:6990,cat:"shoes",
+    story:"The Punjabi jutti, rebuilt: a softer calf upper, a cushioned leather footbed and copper thread embroidery stitched by hand in Patiala.",
+    specs:[["Upper","Calf leather"],["Sole","Leather with rubber heel"],["Origin","Made by hand in Patiala"],["Construction","Hand-stitched, cushioned footbed"],["Finish","Copper thread embroidery"],["Care","Wipe clean, keep dry"]],
+    hours:7,cost:[["Leather",26],["Embroidery",22],["Stitching",16],["Footbed & sole",8],["Freight & checks",5],["MEHAR margin",23]]},
+  belt:{name:"Woven Leather Belt",line:"Dark brown · brass",fab:"Hand-braided calf leather",price:3490,cat:"acc",
+    story:"Strips of calf leather braided by hand, so every hole is wherever you want it. Finished with a brushed solid-brass buckle.",
+    specs:[["Leather","Calf, hand-braided"],["Width","3.5 cm"],["Origin","Made in Kanpur"],["Hardware","Solid brass buckle"],["Care","Condition occasionally"]],
+    hours:3,cost:[["Leather",30],["Braiding",26],["Buckle",10],["Box",4],["Freight & checks",5],["MEHAR margin",25]]}
+};
+Object.entries(NEWP).forEach(([id,p])=>{P[id]={name:p.name,line:p.line,fab:p.fab,price:p.price,img:`img/p/${id}.webp`,isNew:true};D[id]={story:p.story,specs:p.specs,hours:p.hours,cost:p.cost,calls:[]};CAT[id]=p.cat});
+// looks whose photos are in img/ (the rest join as they are shot)
+const READY=["kesar","anandpur","charkha","vanjara","tilla","raavi","lohri","chenab"];
 const WCOL=["#3b2a1e","#7a4a26","#9b5a2a","#c08a55","#d9b98e","#b9b2a6","#e7e2d9"];
 // pins: [product, x%, y%] relative to model box
 const modelAt=(x,y)=>{for(const el of document.elementsFromPoint(x,y)){const m=el.closest&&el.closest(".model");if(m&&+m.style.opacity>0.2)return m}return null};
@@ -434,6 +871,18 @@ const LOOKS=[
   {id:"doaba",name:"Doaba",gur:"ਦੋਆਬਾ",img:IMG.L5,items:[["overshirt",82,28],["trouser_cream",66,64],["sneaker",24,96]]},
   {id:"sutlej",name:"Sutlej",gur:"ਸਤਲੁਜ",img:IMG.L6,items:[["cable_crew",82,24],["denim",68,66],["loafer_suede",24,96]]}
 ];
+// the second drop: new looks shot on the same paper
+const NEWLOOKS=[
+  {id:"kesar",name:"Kesar",gur:"ਕੇਸਰ",img:"img/look7.webp",items:[["kesar_bomber",80,30],["band_shirt",52,26],["trouser_black",66,66],["jutti",26,97]]},
+  {id:"anandpur",name:"Anandpur",gur:"ਅਨੰਦਪੁਰ",img:"img/look8.webp",items:[["overcoat",82,32],["merino_crew",52,22],["trouser_ecru",62,76],["loafer_suede",26,97]]},
+  {id:"charkha",name:"Charkha",gur:"ਚਰਖਾ",img:"img/look9.webp",items:[["khadi_shirt",80,26],["stole",30,40],["trouser_cream",66,70],["jutti",26,97]]},
+  {id:"vanjara",name:"Vanjara",gur:"ਵਣਜਾਰਾ",img:"img/look10.webp",items:[["chore",82,30],["phulkari_tee",52,26],["denim",66,68],["sneaker",24,97]]},
+  {id:"tilla",name:"Tilla",gur:"ਤਿੱਲਾ",img:"img/look11.webp",items:[["overshirt",84,32],["zari_polo",52,22],["trouser_cream",66,70],["loafer_suede",26,97]]},
+  {id:"raavi",name:"Raavi",gur:"ਰਾਵੀ",img:"img/look12.webp",items:[["overcoat",84,34],["virsa_hoodie",52,22],["trouser_black",64,76],["loafer_black",26,97]]},
+  {id:"lohri",name:"Lohri",gur:"ਲੋਹੜੀ",img:"img/look13.webp",items:[["cable_crew",80,26],["weekender",24,70],["trouser_ecru",66,70],["loafer_suede",44,97]]},
+  {id:"chenab",name:"Chenab",gur:"ਚਨਾਬ",img:"img/look14.webp",items:[["overshirt",82,28],["band_shirt",50,20],["denim",68,68],["loafer_suede",24,97]]}
+].filter(L=>READY.includes(L.id));
+LOOKS.push(...NEWLOOKS);
 const N=LOOKS.length;
 const inr=n=>"₹"+Math.round(n).toLocaleString("en-IN");
 const $=id=>document.getElementById(id);
@@ -519,8 +968,10 @@ function endDrag(e){
     if(e.type!=="pointerup"||Math.hypot(e.clientX-downX,e.clientY-downY)>8||e.target.closest(".pin")||e.target.closest(".backbtn"))return;
     const m=models[current],r=m.querySelector("img.main").getBoundingClientRect();
     if(e.clientX>=r.left&&e.clientX<=r.right&&e.clientY>=r.top&&e.clientY<=r.bottom){
-      const f=(e.clientY-r.top)/r.height,items=LOOKS[current].items;
-      const k=f<0.12?0:f<0.52?0:f<0.9?1:2;openPiece(Math.min(k,items.length-1));
+      const fx=(e.clientX-r.left)/r.width*100,fy=(e.clientY-r.top)/r.height*100,items=LOOKS[current].items;
+      // the piece whose pin sits closest to the tap (vertical distance counts most)
+      let k=0,best=1e9;items.forEach((it,j)=>{const d=Math.abs(it[2]-fy)*1.6+Math.abs(it[1]-fx)*0.4;if(d<best){best=d;k=j}});
+      openPiece(k);
     }else setMode("ring");
     return;
   }
@@ -578,7 +1029,7 @@ function updatePanel(i){
       <button class="add${inBag?" done":""}" data-pid="${pid}" aria-label="Add ${p.name} to bag">${inBag?ICON.check:ICON.plus}</button></li>`}).join("");
   itemsEl.classList.remove("swap");void itemsEl.offsetWidth;itemsEl.classList.add("swap");
   const full=L.items.reduce((s,[pid])=>s+P[pid].price,0);
-  $("full").textContent=inr(full);$("disc").textContent=inr(full*0.9);
+  $("full").textContent=inr(full);$("disc").textContent=inr(full*0.9);$("bundleTxt").textContent=`Bundle all ${L.items.length} and save 10%`;
 }
 const ICON={plus:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 5v14M5 12h14"/></svg>',
   check:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12.5l4.5 4.5L19 7"/></svg>'};
@@ -669,13 +1120,13 @@ $("macro").addEventListener("pointerleave",()=>{$("macroImg").style.transform=""
 let bag=[];
 try{bag=JSON.parse(localStorage.getItem("mehar-bag")||"[]")||[]}catch(e){bag=[]}
 function lineInfo(b){
-  if(b.type==="item"){const p=P[b.id];return{title:p.name,sub:p.line,full:p.price,price:p.price,imgs:[p.img]}}
+  if(b.type==="item"){const p=P[b.id];return{title:p.name,sub:p.line+(b.size?` · ${b.size}`:""),full:p.price,price:p.price,imgs:[p.img]}}
   const L=LOOKS.find(l=>l.id===b.id);const full=L.items.reduce((s,[pid])=>s+P[pid].price,0);
   return{title:`${L.name} look`,sub:L.items.map(([pid])=>P[pid].name).join(" · "),full,price:full*0.9,imgs:L.items.map(([pid])=>P[pid].img).concat([L.img])};
 }
 function save(){
   try{localStorage.setItem("mehar-bag",JSON.stringify(bag))}catch(e){}
-  const n=bag.reduce((s,b)=>s+b.qty*(b.type==="look"?3:1),0);
+  const n=bag.reduce((s,b)=>s+b.qty*(b.type==="look"?(LOOKS.find(l=>l.id===b.id)?.items.length||3):1),0);
   const c=$("bagCount");c.textContent=n;c.classList.remove("bump");void c.offsetWidth;c.classList.add("bump");
   renderBag();
 }
@@ -704,6 +1155,227 @@ $("openBag").onclick=openBag;$("closeBag").onclick=closeBag;$("scrim").onclick=c
 $("checkout").onclick=()=>{$("checkoutNote").hidden=false};
 
 let tt;function toast(m){const t=$("toast");t.textContent=m;t.classList.add("on");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("on"),2200)}
+
+/* ================= expanded store: collection, lookbook, fit, atelier, craft, journal, care, drop ================= */
+const ORDER=Object.keys(P);
+const SIZES=c=>c==="shoes"?["UK 7","UK 8","UK 9","UK 10","UK 11","UK 12"]:c==="acc"?["One size"]:c==="bottoms"?["30","32","34","36","38"]:["S","M","L","XL","XXL"];
+const HEART='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>';
+
+/* ---------- saved (wishlist) + recently viewed ---------- */
+let saved=[],recent=[];
+try{saved=JSON.parse(localStorage.getItem("mehar-saved")||"[]")||[];recent=JSON.parse(localStorage.getItem("mehar-recent")||"[]")||[]}catch(e){}
+const persist=()=>{try{localStorage.setItem("mehar-saved",JSON.stringify(saved));localStorage.setItem("mehar-recent",JSON.stringify(recent))}catch(e){}};
+function toggleSave(id){const i=saved.indexOf(id);if(i>-1)saved.splice(i,1);else saved.unshift(id);persist();syncSaved();toast(i>-1?`${P[id].name} removed from saved`:`${P[id].name} saved`)}
+function syncSaved(){
+  $("wCount").textContent=saved.length||"";$("wCount").dataset.n=saved.length;
+  document.querySelectorAll("[data-heart]").forEach(b=>b.classList.toggle("on",saved.includes(b.dataset.heart)));
+  $("wList").innerHTML=saved.length?saved.map(id=>{const p=P[id];return `<li class="bl"><div class="bt"><img src="${im(p.img)}" alt=""></div><div><h3>${p.name}</h3><p>${p.line}</p><div class="qty"><button class="rm" data-open="${id}" style="margin:0">View</button><button class="rm" data-unsave="${id}">Remove</button></div></div><div class="bp">${inr(p.price)}</div></li>`}).join(""):`<li class="empty"><b>Nothing saved yet.</b>Tap the heart on any piece to keep it here.</li>`;
+}
+$("wList").addEventListener("click",e=>{const o=e.target.closest("[data-open]"),u=e.target.closest("[data-unsave]");if(o){closeW();openQV(o.dataset.open)}if(u)toggleSave(u.dataset.unsave)});
+function openW(){$("wdrawer").classList.add("on");$("scrim").classList.add("on");$("wdrawer").setAttribute("aria-hidden","false")}
+function closeW(){$("wdrawer").classList.remove("on");$("scrim").classList.remove("on");$("wdrawer").setAttribute("aria-hidden","true")}
+$("openW").onclick=openW;$("closeW").onclick=closeW;$("scrim").addEventListener("click",closeW);
+function pushRecent(id){recent=[id,...recent.filter(x=>x!==id)].slice(0,8);persist();renderRecent()}
+function renderRecent(){const r=recent.filter(id=>P[id]);$("recentWrap").hidden=r.length<2;
+  $("recent").innerHTML=r.map(id=>`<li><button data-open="${id}"><div class="ri"><img src="${im(P[id].img)}" alt="" loading="lazy"></div><span>${P[id].name}</span></button></li>`).join("")}
+$("recent").addEventListener("click",e=>{const b=e.target.closest("[data-open]");if(b)openQV(b.dataset.open)});
+
+/* ---------- collection grid ---------- */
+let cat="all",sortBy="feat";
+const chips=$("chips");
+chips.innerHTML=CATS.map(([k,l])=>`<button role="tab" data-c="${k}" class="${k==="all"?"on":""}">${l}<i>${k==="all"?ORDER.length:ORDER.filter(id=>CAT[id]===k).length}</i></button>`).join("");
+chips.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;cat=b.dataset.c;[...chips.children].forEach(x=>x.classList.toggle("on",x===b));renderGrid()});
+$("sort").onchange=e=>{sortBy=e.target.value;renderGrid()};
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target)}}),{rootMargin:"0px 0px -8% 0px"});
+function renderGrid(){
+  let ids=ORDER.filter(id=>cat==="all"||CAT[id]===cat);
+  if(sortBy==="lo")ids.sort((a,b)=>P[a].price-P[b].price);
+  if(sortBy==="hi")ids.sort((a,b)=>P[b].price-P[a].price);
+  if(sortBy==="new")ids.sort((a,b)=>(P[b].isNew?1:0)-(P[a].isNew?1:0));
+  $("grid").innerHTML=ids.map((id,i)=>{const p=P[id];const look=LOOKS.find(L=>L.items.some(([x])=>x===id));
+    return `<li class="card" style="transition-delay:${(i%4)*70}ms"><div class="cimg" data-open="${id}" role="button" tabindex="0" aria-label="Open ${p.name}"><img src="${im(p.img)}" alt="${p.name}" loading="lazy">
+      ${p.isNew?'<span class="badge k">New</span>':look?`<span class="badge">${look.name} look</span>`:""}
+      <button class="heart" data-heart="${id}" aria-label="Save ${p.name}">${HEART}</button>
+      <button class="quick" data-quick="${id}">Quick add</button></div>
+      <div class="cmeta"><h3>${p.name}</h3><span class="pr">${inr(p.price)}</span><span class="ln">${p.line}</span></div></li>`}).join("");
+  $("gcount").textContent=`Showing ${ids.length} of ${ORDER.length} pieces`;
+  document.querySelectorAll(".card").forEach(c=>io.observe(c));syncSaved();
+}
+$("grid").addEventListener("click",e=>{
+  const h=e.target.closest("[data-heart]");if(h){e.stopPropagation();toggleSave(h.dataset.heart);return}
+  const q=e.target.closest("[data-quick]");if(q){e.stopPropagation();const id=q.dataset.quick;CAT[id]==="acc"?addItem(id,"One size"):openQV(id,true);return}
+  const o=e.target.closest("[data-open]");if(o)openQV(o.dataset.open);
+});
+$("grid").addEventListener("keydown",e=>{if(e.key==="Enter"&&e.target.matches(".cimg"))openQV(e.target.dataset.open)});
+function addItem(id,size){const ex=bag.find(x=>x.type==="item"&&x.id===id);if(ex)ex.qty++;else bag.push({type:"item",id,qty:1,size});save();updatePanel(current);toast(`${P[id].name}${size&&size!=="One size"?` (${size})`:""} added to bag`)}
+
+/* ---------- quick view ---------- */
+let qvId=null,qvSize=null,lastFocus=null;
+function openQV(id,pickSize){
+  const p=P[id],d=D[id],c=CAT[id];qvId=id;qvSize=c==="acc"?"One size":null;lastFocus=document.activeElement;
+  $("qvImg").src=im(p.img);$("qvImg").alt=p.name;$("qvImg").parentElement.classList.remove("z");
+  const rec=c==="shoes"?null:c==="bottoms"?fit.waist:fit.size;
+  const parts=d.cost.map(([l,pc],i)=>({l,pc,amt:p.price*pc/100,c:WCOL[i%WCOL.length],m:/margin/i.test(l)}));
+  $("qvInfo").innerHTML=`<div class="brandline">MEHAR · ${CATS.find(x=>x[0]===c)[1]}${p.isNew?" · New":""}</div>
+    <h2 id="qvTitle">${p.name}</h2><div class="pl" style="color:var(--muted);font-size:13px">${p.line} — ${p.fab}</div><div class="pp">${inr(p.price)}</div>
+    <p class="story">${d.story}</p>
+    <div class="sizes"><div class="lbl"><span>Size</span>${c==="acc"||c==="shoes"?"":`<a href="#fit" id="qvFit">Find my size</a>`}</div>
+      <div class="sz" id="qvSz">${SIZES(c).map(s=>`<button data-s="${s}" class="${s===qvSize?"on":""}${s===rec?" rec":""}">${s}</button>`).join("")}</div></div>
+    <div class="qvrow"><button class="cta" id="qvAdd"><span>${qvSize?`Add to bag · ${inr(p.price)}`:"Choose a size"}</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
+      <button class="heart2${saved.includes(id)?" on":""}" data-heart="${id}" aria-label="Save">${HEART}</button></div>
+    <dl class="specs">${d.specs.map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join("")}<dt>Hands-on time</dt><dd>${d.hours} hours per piece</dd></dl>
+    <div class="worth"><h3>Why it costs ${inr(p.price)}</h3><p>Every rupee of the price, shown openly.</p>
+      <div class="wbar">${parts.map(x=>`<span style="width:${x.pc}%;background:${x.c}" title="${x.l}"></span>`).join("")}</div>
+      <ul class="wrows">${parts.map(x=>`<li${x.m?' class="m"':""}><i style="background:${x.c}"></i><span>${x.l}</span><span>${inr(x.amt)}</span></li>`).join("")}</ul></div>`;
+  $("qv").hidden=false;document.body.style.overflow="hidden";$("qvx").focus();pushRecent(id);
+  $("qvSz").onclick=e=>{const b=e.target.closest("button");if(!b)return;qvSize=b.dataset.s;[...$("qvSz").children].forEach(x=>x.classList.toggle("on",x===b));$("qvAdd").querySelector("span").textContent=`Add to bag · ${inr(p.price)}`};
+  $("qvAdd").onclick=()=>{if(!qvSize){$("qvSz").animate([{transform:"translateX(0)"},{transform:"translateX(-6px)"},{transform:"translateX(6px)"},{transform:"translateX(0)"}],{duration:300});return}addItem(id,qvSize);closeQV()};
+  $("qvInfo").querySelector(".heart2").onclick=e=>{toggleSave(id);e.currentTarget.classList.toggle("on",saved.includes(id))};
+  const qf=$("qvFit");if(qf)qf.onclick=()=>closeQV();
+}
+function closeQV(){$("qv").hidden=true;document.body.style.overflow="";if(lastFocus)lastFocus.focus?.()}
+$("qvx").onclick=closeQV;$("qv").addEventListener("click",e=>{if(e.target===$("qv"))closeQV()});
+$("qvImg").parentElement.addEventListener("click",e=>{const w=e.currentTarget;w.classList.toggle("z");if(w.classList.contains("z")){const r=w.getBoundingClientRect();$("qvImg").style.transformOrigin=`${(e.clientX-r.left)/r.width*100}% ${(e.clientY-r.top)/r.height*100}%`}});
+$("qvImg").parentElement.addEventListener("pointermove",e=>{const w=e.currentTarget;if(!w.classList.contains("z"))return;const r=w.getBoundingClientRect();$("qvImg").style.transformOrigin=`${(e.clientX-r.left)/r.width*100}% ${(e.clientY-r.top)/r.height*100}%`});
+
+/* ---------- search ---------- */
+let srSel=0;
+function openSearch(){$("srch").hidden=false;$("srq").value="";runSearch();setTimeout(()=>$("srq").focus(),30)}
+function closeSearch(){$("srch").hidden=true}
+function runSearch(){const q=$("srq").value.trim().toLowerCase();
+  const hits=ORDER.filter(id=>{const p=P[id];return !q||(p.name+" "+p.line+" "+p.fab+" "+CAT[id]+" "+(D[id].story||"")).toLowerCase().includes(q)}).slice(0,8);
+  srSel=0;$("srres").innerHTML=hits.length?hits.map((id,i)=>`<li><button data-open="${id}" class="${i===0?"on":""}"><span class="si"><img src="${im(P[id].img)}" alt=""></span><span><b>${P[id].name}</b><small>${P[id].line}</small></span><span>${inr(P[id].price)}</span></button></li>`).join(""):`<li class="none">No pieces match “${q}”.</li>`}
+$("openSearch").onclick=openSearch;$("srx").onclick=closeSearch;$("srch").addEventListener("click",e=>{if(e.target===$("srch"))closeSearch()});
+$("srq").addEventListener("input",runSearch);
+$("srq").addEventListener("keydown",e=>{const bs=[...$("srres").querySelectorAll("button")];
+  if(e.key==="ArrowDown"||e.key==="ArrowUp"){e.preventDefault();srSel=(srSel+(e.key==="ArrowDown"?1:-1)+bs.length)%bs.length;bs.forEach((b,i)=>b.classList.toggle("on",i===srSel))}
+  if(e.key==="Enter"&&bs[srSel]){closeSearch();openQV(bs[srSel].dataset.open)}});
+$("srres").addEventListener("click",e=>{const b=e.target.closest("[data-open]");if(b){closeSearch();openQV(b.dataset.open)}});
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape"){if(!$("qv").hidden){closeQV();e.stopImmediatePropagation()}else if(!$("srch").hidden){closeSearch();e.stopImmediatePropagation()}else if($("wdrawer").classList.contains("on"))closeW()}
+  if((e.key==="/"||(e.key.toLowerCase()==="k"&&(e.metaKey||e.ctrlKey)))&&!/input|textarea/i.test(document.activeElement.tagName)){e.preventDefault();openSearch()}
+},true);
+
+/* ---------- lookbook ---------- */
+const reel=$("reel");
+reel.innerHTML=LOOKS.map((L,i)=>`<article class="lk"><span class="n">${String(i+1).padStart(2,"0")}</span><img class="m" src="${im(L.img)}" alt="The ${L.name} look" loading="lazy">
+  <div class="cap"><div><b>${L.name}</b><br><span>${L.gur}</span></div><button data-look="${i}">Try this look</button></div></article>`).join("");
+reel.addEventListener("click",e=>{const b=e.target.closest("[data-look]");if(!b||reel.dataset.moved==="1")return;setMode("ring");go(+b.dataset.look);pauseFor();$("top").scrollIntoView({behavior:"smooth"})});
+{let down=false,sx=0,sl=0;reel.addEventListener("pointerdown",e=>{if(e.pointerType!=="mouse")return;down=true;sx=e.clientX;sl=reel.scrollLeft;reel.dataset.moved="0"});
+ addEventListener("pointermove",e=>{if(!down)return;const dx=e.clientX-sx;if(Math.abs(dx)>5){reel.dataset.moved="1";reel.classList.add("drag")}reel.scrollLeft=sl-dx});
+ addEventListener("pointerup",()=>{if(!down)return;down=false;reel.classList.remove("drag");setTimeout(()=>reel.dataset.moved="0",50)})}
+
+/* ---------- fit finder ---------- */
+const fit={size:"L",waist:"34"};
+function fitCalc(){
+  const h=+$("fh").value,w=+$("fw").value,pref=+($("fpref").querySelector(".on").dataset.v);
+  const ft=h/30.48,fi=Math.floor(ft),inch=Math.round((ft-fi)*12);
+  $("fhv").textContent=`${h} cm · ${inch===12?fi+1:fi}′${inch===12?0:inch}″`;$("fwv").textContent=`${w} kg`;
+  const bmi=w/((h/100)**2);
+  // chest-led sizing for a long, wide cut: build moves you up, very tall frames get the longer body
+  let idx=bmi<20?0:bmi<22.5?1:bmi<25.5?2:bmi<29?3:4;
+  if(h>=190&&idx<4)idx++;
+  if(h<165&&idx>0)idx--;
+  idx=Math.max(0,Math.min(4,idx+pref));
+  const S=["S","M","L","XL","XXL"],size=S[idx];
+  const waist=String(Math.max(30,Math.min(38,30+2*Math.round((w-58)/12)+(pref>0?2:0))));
+  const b=$("fsize");if(b.textContent!==size){b.textContent=size;b.classList.remove("pop");void b.offsetWidth;b.classList.add("pop")}
+  fit.size=size;fit.waist=waist;
+  const len=h>=185?"Sleeves and body land exactly where they're cut to":h>=175?"Sleeves sit a touch long — the way they're meant to stack":"Expect a longer, slouchier sleeve; fold once at the cuff";
+  $("fnotes").innerHTML=`<li><span>Tops</span>${size} — ${pref<0?"a closer line through the chest":pref>0?"extra room through the chest and back":"the drop shoulder sits where we cut it"}</li><li><span>Trousers</span>Waist ${waist}, long inseam</li><li><span>Length</span>${len}</li>`;
+  const sc=0.72+idx*0.07, tall=0.86+(h-155)/45*0.28;
+  $("ffig").innerHTML=`<g transform="translate(100 310) scale(${(1).toFixed(2)} ${tall.toFixed(3)}) translate(-100 -310)">
+    <circle class="body" cx="100" cy="34" r="20"/><rect class="body" x="88" y="52" width="24" height="16"/>
+    <path class="cloth" d="M${100-50*sc} 70 Q100 ${62} ${100+50*sc} 70 L${100+58*sc} 172 L${100+40*sc} 176 L${100+36*sc} 112 L${100+34*sc} 180 L${100-34*sc} 180 L${100-36*sc} 112 L${100-40*sc} 176 L${100-58*sc} 172 Z"/>
+    <path class="body" d="M${100-30} 180 L${100+30} 180 L${100+26} 310 L${100+6} 310 L100 205 L${100-6} 310 L${100-26} 310 Z" opacity=".9"/></g>`;
+}
+["fh","fw"].forEach(id=>$(id).addEventListener("input",fitCalc));
+$("fpref").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;[...$("fpref").children].forEach(x=>x.classList.toggle("on",x===b));fitCalc()});
+fitCalc();
+
+/* ---------- monogram atelier ---------- */
+const GUR="ੳਅੲਸਹਕਖਗਘਙਚਛਜਝਞਟਠਡਢਣਤਥਦਧਨਪਫਬਭਮਯਰਲਵੜ".split("");
+$("gurpad").innerHTML=GUR.map(g=>`<button data-g="${g}" aria-label="Add ${g}">${g}</button>`).join("")+`<button data-g="⌫" aria-label="Delete last letter">⌫</button>`;
+let script="lat";
+function atUpdate(){let v=$("atin").value;if(script==="lat")v=v.replace(/[^a-z]/gi,"").toUpperCase();$("atin").value=v;$("atmark").textContent=v||(script==="lat"?"MS":"ਮ");$("atchest").classList.toggle("gur",script==="gur")}
+$("atin").addEventListener("input",atUpdate);
+$("atscript").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;script=b.dataset.v;[...$("atscript").children].forEach(x=>x.classList.toggle("on",x===b));$("gurpad").hidden=script!=="gur";$("atin").value=script==="gur"?"ਮ":"MS";atUpdate()});
+$("gurpad").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const g=b.dataset.g,v=[...$("atin").value];if(g==="⌫")v.pop();else if(v.length<3)v.push(g);$("atin").value=v.join("");atUpdate()});
+$("atfin").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;[...$("atfin").children].forEach(x=>x.classList.toggle("on",x===b));$("atchest").classList.remove("copper","tonal");if(b.dataset.v!=="chrome")$("atchest").classList.add(b.dataset.v)});
+P.monogram={name:"Monogram service",line:"Hand heat-embossed",fab:"Applied in Ludhiana",price:990,img:"img/look1.webp"};
+$("atadd").onclick=()=>{const v=$("atin").value||"MS",f=$("atfin").querySelector(".on").textContent;const ex=bag.find(x=>x.type==="item"&&x.id==="monogram"&&x.size===`${v} · ${f}`);if(ex)ex.qty++;else bag.push({type:"item",id:"monogram",qty:1,size:`${v} · ${f}`});save();toast(`Monogram “${v}” in ${f.toLowerCase()} added`)};
+atUpdate();
+
+/* ---------- craft map ---------- */
+const TOWNS=[
+  {id:"anandpur",n:"Anandpur Sahib",g:"ਸ੍ਰੀ ਅਨੰਦਪੁਰ ਸਾਹਿਬ",x:372,y:150,hq:1,craft:"The house",people:"Design studio",since:2026,txt:"Where MEHAR is drawn, named and fitted. Every pattern is tried on a 6 ft frame here before it goes to a workshop.",match:()=>false},
+  {id:"amritsar",n:"Amritsar",g:"ਅੰਮ੍ਰਿਤਸਰ",x:205,y:120,craft:"Wool weaving & zari",people:"2 mills, 14 weavers",since:1950,txt:"Old mills along the Grand Trunk Road weave our flannels and camel cloth; zari tipping is finished by hand in the walled city.",match:id=>/Amritsar/.test(D[id].specs.map(s=>s[1]).join())},
+  {id:"ludhiana",n:"Ludhiana",g:"ਲੁਧਿਆਣਾ",x:318,y:205,craft:"Knitting, fleece & tailoring",people:"4 units, 60 makers",since:1962,txt:"India's knitwear capital. Our fleece, merino and lambswool are knitted, washed and sewn here, and every monogram is pressed by hand.",match:id=>/Ludhiana/.test(D[id].specs.map(s=>s[1]).join())},
+  {id:"patiala",n:"Patiala",g:"ਪਟਿਆਲਾ",x:395,y:258,craft:"Phulkari & juttis",people:"38 artisans",since:"generations",txt:"Phulkari is the embroidery of Punjab's women. Our artisans here guide every stitch by hand — up to 38,000 on a single tee.",match:id=>/Patiala/.test(D[id].specs.map(s=>s[1]).join())},
+  {id:"delhi",n:"Delhi",g:"ਦਿੱਲੀ",x:430,y:372,craft:"Tailoring & denim cutting",people:"1 atelier, 9 tailors",since:1988,txt:"Trousers, shirts and our selvedge denim are cut and finished in a small atelier in old Delhi.",match:id=>/Delhi/.test(D[id].specs.map(s=>s[1]).join())},
+  {id:"agra",n:"Agra",g:"ਆਗਰਾ",x:470,y:452,craft:"Hand-sewn shoes",people:"22 shoemakers",since:1971,txt:"Loafers and sneakers are lasted and hand-sewn by families who have made shoes in Agra for three generations.",match:id=>/Agra/.test(D[id].specs.map(s=>s[1]).join())},
+  {id:"kanpur",n:"Kanpur",g:"ਕਾਨਪੁਰ",x:560,y:488,craft:"Leather, boots & indigo",people:"2 tanneries, 18 makers",since:1940,txt:"Vegetable-tanned leather for our bags and belts, Goodyear-welted boots and rope-dyed indigo canvas.",match:id=>/Kanpur/.test(D[id].specs.map(s=>s[1]).join())}
+];
+const map=$("map");
+map.innerHTML=`<path class="land" d="M120 40 L250 30 L330 60 L420 70 L470 120 L455 190 L500 250 L520 330 L560 380 L590 470 L585 515 L470 515 L420 470 L380 420 L330 360 L280 300 L230 250 L160 210 L110 150 Z"/>
+  <path class="river" d="M150 60 C210 120 250 170 300 190 S380 220 430 250"/><text class="rl" x="170" y="92">Ravi</text>
+  <path class="river" d="M330 70 C340 130 330 170 320 200 S300 250 280 300"/><text class="rl" x="336" y="110">Beas</text>
+  <path class="river" d="M420 90 C400 140 370 170 350 210 S300 260 250 290"/><text class="rl" x="418" y="132">Sutlej</text>
+  <path class="river" d="M470 300 C480 360 500 420 540 470"/><text class="rl" x="490" y="350">Yamuna</text>`+
+  TOWNS.map(t=>`<g class="city${t.hq?" hq":""}" data-t="${t.id}" tabindex="0" role="button" aria-label="${t.n}"><circle class="r" cx="${t.x}" cy="${t.y}" r="10"/><circle class="d" cx="${t.x}" cy="${t.y}" r="${t.hq?7:5}"/><text x="${t.x+12}" y="${t.y+4}">${t.n}${t.hq?" — the house":""}</text></g>`).join("")+
+  `<g transform="translate(30 430)"><rect width="150" height="70" fill="#f3f2ef" stroke="#d8d3ca"/><text x="12" y="22" font-size="10" fill="#7a766f" letter-spacing="1.5">ALSO</text><g class="city" data-t="okayama" tabindex="0" role="button" aria-label="Okayama, Japan"><circle class="r" cx="22" cy="46" r="10"/><circle class="d" cx="22" cy="46" r="5"/><text x="34" y="50">Okayama, Japan</text></g></g>`;
+TOWNS.push({id:"okayama",n:"Okayama, Japan",g:"ਓਕਾਯਾਮਾ",craft:"Selvedge denim",people:"1 mill",since:1950,txt:"The only cloth we bring in from outside India: 14 oz denim woven slowly on vintage shuttle looms. It is cut and sewn in Delhi.",match:id=>/Okayama/.test(D[id].specs.map(s=>s[1]).join())});
+function showTown(id){const t=TOWNS.find(x=>x.id===id);map.querySelectorAll(".city").forEach(c=>c.classList.toggle("on",c.dataset.t===id));
+  const made=ORDER.filter(pid=>D[pid]&&t.match(pid));
+  const mc=$("mapcard");mc.style.animation="none";void mc.offsetWidth;mc.style.animation="";
+  mc.innerHTML=`<p class="kick">${t.craft}</p><h3>${t.n}</h3><div class="g">${t.g}</div><p>${t.txt}</p><dl><dt>Who</dt><dd>${t.people}</dd><dt>Working since</dt><dd>${t.since}</dd><dt>Pieces made here</dt><dd>${made.length||"—"}</dd></dl>${made.length?`<ul>${made.map(pid=>`<li><button data-open="${pid}">${P[pid].name}</button></li>`).join("")}</ul>`:""}`}
+map.addEventListener("click",e=>{const c=e.target.closest(".city");if(c)showTown(c.dataset.t)});
+map.addEventListener("keydown",e=>{if(e.key==="Enter"){const c=e.target.closest(".city");if(c)showTown(c.dataset.t)}});
+$("mapcard").addEventListener("click",e=>{const b=e.target.closest("[data-open]");if(b)openQV(b.dataset.open)});
+showTown("ludhiana");
+
+/* ---------- journal ---------- */
+const J=[
+  {t:"38,000 stitches on one tee",k:"Craft · 4 min",img:MAC.phulkari_tee,s:"How a phulkari panel is guided by hand in Patiala, and why we pay for the day it takes.",
+   b:["Phulkari — literally ‘flower work’ — began as the embroidery Punjabi women stitched for their daughters' weddings, laid in darning stitches on the back of coarse khaddar so the pattern rose on the front.","On the Phulkari Boxy Tee, an artisan in Patiala lays about 38,000 stitches of copper and ivory thread. No machine guides them: the geometry is counted by eye, thread by thread, which is why no two tees are identical.","That day of work is the single biggest line in the tee's price — 30% of it, more than the cloth. We show that number because it is the point."]},
+  {t:"Why we show every rupee",k:"House · 3 min",img:MAC.virsa_hoodie,s:"Every MEHAR piece opens up to show what its price pays for — cloth, hands, freight and our margin.",
+   b:["Most luxury prices are a mystery on purpose. Ours isn't. Open any piece and you'll see a bar that splits its price into cloth, the hours of the people who made it, trims, freight and checks — and, last, what MEHAR keeps.","Our margin sits between 23% and 31%. It pays for the studio in Anandpur Sahib, for samples that never make it, and for repairs we do for free for life.","If a number ever looks wrong to you, write to us. We would rather explain a price than hide one."]},
+  {t:"Cut for a 6 ft frame",k:"Fit · 3 min",img:MAC.cable_crew,s:"Why everything at MEHAR is longer in the body and sleeve — and how to wear it if you're not tall.",
+   b:["Most ready-to-wear is graded from a 5′8″ fit model. MEHAR is graded from a 6 ft one, so bodies run about 4 cm longer and sleeves about 3 cm longer than you are used to.","On a tall frame that means a hem that clears the belt when you raise your arms and a cuff that lands at the wrist bone. On a shorter frame it gives the stacked, relaxed sleeve the collection is styled with.","The fit finder above does the maths for you — and our size chart lists every measurement in centimetres."]}
+];
+$("jgrid").innerHTML=J.map((j,i)=>`<button class="jc" data-j="${i}"><div class="ji"><img src="${j.img}" alt="" loading="lazy"><i>${j.k}</i></div><h3>${j.t}</h3><p>${j.s}</p><span class="more">Read</span></button>`).join("");
+$("jgrid").addEventListener("click",e=>{
+  if(e.target.closest(".x")){$("jgrid").querySelector(".jfull")?.remove();return}
+  const c=e.target.closest(".jc");if(!c)return;const j=J[+c.dataset.j];$("jgrid").querySelector(".jfull")?.remove();
+  const el=document.createElement("article");el.className="jfull";el.innerHTML=`<div><p class="kick">${j.k}</p><h3>${j.t}</h3><button class="x">Close</button></div><div class="body">${j.b.map(p=>`<p>${p}</p>`).join("")}</div>`;
+  $("jgrid").appendChild(el);el.scrollIntoView({behavior:"smooth",block:"nearest"});
+});
+
+/* ---------- care & questions ---------- */
+const FAQ=[
+  ["How does sizing run?","Long and wide — everything is graded from a 6 ft fit model. Use the fit finder above; if you are between sizes and like a cleaner line, size down."],
+  ["What does ‘repairs for life’ mean?","Send any MEHAR piece back to Anandpur Sahib — a pulled phulkari thread, a worn loafer sole, a broken zip — and we fix it at no cost, for as long as you own it."],
+  ["How do I care for the acid-washed fleece?","Cold wash inside out with similar colours and dry it flat. Never tumble dry: the marbling is done by hand and heat dulls it."],
+  ["Is the phulkari done by machine?","Never. Every phulkari panel is hand-guided by artisans in Patiala. The hours are listed on each piece."],
+  ["Do you ship outside India?","Not yet. The first drop ships free across India; international shipping opens with the second drop."],
+  ["Can I return a monogrammed piece?","Monogrammed pieces are made for you, so they can't be returned — but they're still covered by repairs for life."]
+];
+$("acc").innerHTML=FAQ.map(([q,a],i)=>`<details${i===0?" open":""}><summary>${q}</summary><div class="a">${a}</div></details>`).join("");
+
+/* ---------- first drop countdown ---------- */
+const DROP=new Date("2027-04-13T10:00:00+05:30").getTime();
+function cd(){const s=Math.max(0,Math.floor((DROP-Date.now())/1000));const v=[Math.floor(s/86400),Math.floor(s/3600)%24,Math.floor(s/60)%60,s%60];
+  [...$("cd").children].forEach((d,i)=>d.querySelector("b").textContent=String(v[i]).padStart(2,"0"))}
+cd();setInterval(cd,1000);
+$("join").addEventListener("submit",e=>{e.preventDefault();const v=$("jemail").value.trim();
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)){$("jnote").textContent="That email doesn't look right — try again.";return}
+  try{localStorage.setItem("mehar-join",v)}catch(err){}
+  $("join").hidden=true;$("jnote").textContent="You're on the list. We'll write once, on Vaisakhi.";});
+try{if(localStorage.getItem("mehar-join")){$("join").hidden=true;$("jnote").textContent="You're on the list. We'll write once, on Vaisakhi."}}catch(e){}
+
+renderGrid();renderRecent();syncSaved();
+{const links=[...document.querySelectorAll(".nav a")];const secs=links.map(a=>document.querySelector(a.getAttribute("href")));
+ addEventListener("scroll",()=>{let k=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<innerHeight*0.4)k=i});links.forEach((a,i)=>a.classList.toggle("on",i===k))},{passive:true})}
 
 save();$("bagCount").classList.remove("bump");
 tick();
